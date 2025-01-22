@@ -9,10 +9,10 @@ import (
 )
 
 const logo = `
- _____  _____  _____  _____  _____ 
-/   __\/     \/  _  \/  _  \/   __\
-|  |_ ||  |--||  |  ||  _  <|   __|
-\_____/\_____/\_____/\__|\_/\_____/
+		 _____  _____  _____  _____  _____ 
+		/   __\/     \/  _  \/  _  \/   __\
+		|  |_ ||  |--||  |  ||  _  <|   __|
+		\_____/\_____/\_____/\__|\_/\_____/
 `
 
 const (
@@ -24,7 +24,7 @@ const (
 	leftBottomBorder  = "└"
 	rightBottomBorder = "┘"
 	website           = "https://gitee.com/monobytes/gcore"
-	version           = "v2.2.4"
+	version           = "v0.0.1"
 	global            = "Global"
 )
 
