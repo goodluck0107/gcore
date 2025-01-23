@@ -31,4 +31,4 @@ go.work.sum
 
 # executable files
 *.exe
-/gplugin/protoc-gen-idmsg/
+/gplugin/protoc-gen-idmsg/*
