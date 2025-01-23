@@ -1,0 +1,47 @@
+// 自定义补充类型
+syntax = "proto3";
+option go_package = "protocol/pb";
+
+package extend;
+
+// 为了能直接引用 proto
+import "cmd.proto";
+import "google/protobuf/descriptor.proto";
+
+message ProtoId {
+  repeated ProtoIdRule rules = 1;
+}
+
+message ProtoIdRule {
+  CMD cmd = 1;
+}
+
+extend google.protobuf.MethodOptions {
+  // See `ProtoIdRule`
+  ProtoIdRule id = 1001;
+  // 若 auth_method 定义则优先使用，否则使用 service 的定义
+  AuthType auth_method = 1002;
+}
+
+// 鉴权类型
+enum AuthType {
+  AuthNone = 0;     // 无鉴权
+  AuthUser = 1;     // 玩家鉴权
+  AuthManager = 2;  // 内部管理接口
+}
+
+enum ServiceName {
+  ServerNone = 0;
+  ServerGate = 1;
+  ServiceLogin = 2;
+  ServiceLogic = 3;
+}
+
+extend google.protobuf.ServiceOptions {
+  AuthType auth_service = 1002;
+}
+
+extend google.protobuf.ServiceOptions {
+  ServiceName service_name = 1004;
+}
+

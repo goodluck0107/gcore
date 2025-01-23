@@ -1,0 +1,10 @@
+syntax = "proto3";
+option go_package = "protocol/pb";
+
+enum CMD {
+  INVALID = 0;
+
+  GreeterHello = 1001;
+
+  Max = 10000001;
+}

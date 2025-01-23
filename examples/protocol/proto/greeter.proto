@@ -1,0 +1,25 @@
+// 服务器间 rpc 通讯用消息
+syntax = "proto3";
+option go_package = "protocol/pb";
+
+import "google/api/annotations.proto";
+import "extend.proto";
+
+// rpc 方法
+service Greeter {
+  option(extend.auth_service) = AuthNone;
+
+  // 客户端初始化接口
+  rpc Hello(HelloReq) returns (HelloRsp) {
+    option(google.api.http) = {post: "/v1/greeter/hello", body:"*", response_body: "*"};
+    option(extend.id) = {cmd: GreeterHello};
+  }
+}
+
+message HelloReq {
+  string name = 1;
+}
+
+message HelloRsp {
+  string msg = 1;
+}

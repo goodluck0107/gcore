@@ -31,7 +31,7 @@ const (
 func PrintFrameworkInfo() {
 	fmt.Println(strings.TrimSuffix(strings.TrimPrefix(logo, "\n"), "\n"))
 	PrintBoxInfo("",
-		fmt.Sprintf("[Website] %s", website),
+		fmt.Sprintf("[Framework] %s", website),
 		fmt.Sprintf("[Version] %s", version),
 	)
 }

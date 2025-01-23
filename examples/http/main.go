@@ -8,7 +8,18 @@ import (
 
 func main() {
 	engine := hextech.NewEngine()
-	engine.Injection(ghttp.NewServer())
+	module := ghttp.NewServer()
+
+	initApp(module.Proxy())
+
+	engine.Injection(module)
 	engine.Injection(gpprof.NewPProf())
 	engine.Up()
+}
+
+func initApp(proxy *ghttp.Proxy) {
+	router := proxy.Router()
+	router.Get("/", func(ctx ghttp.Context) error {
+		return ctx.Success("Hello World")
+	})
 }
