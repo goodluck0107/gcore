@@ -101,15 +101,15 @@ func (g *RpcData) getInnerSvcName(svc *descriptor.ServiceDescriptorProto) string
 
 func (g *RpcData) getGenFileNameV2(f *File) string {
 	prefix := strings.ReplaceAll(f.GetName(), ".proto", "")
-	return fmt.Sprintf("%s_grpcwrap.pb.go", prefix)
+	return fmt.Sprintf("%s_grpc.wrap.go", prefix)
 }
 
 func (g *RpcData) getGenCliNameV2(svc *descriptor.ServiceDescriptorProto) string {
-	return fmt.Sprintf("Discovery%sClient", firstUpper(svc.GetName()))
+	return fmt.Sprintf("%sClientDiscovery", firstUpper(svc.GetName()))
 }
 
 func (g *RpcData) getGenSvcNameV2(svc *descriptor.ServiceDescriptorProto) string {
-	return fmt.Sprintf("%sServiceProvider", firstUpper(svc.GetName()))
+	return fmt.Sprintf("%sServerProvider", firstUpper(svc.GetName()))
 }
 
 func (g *RpcData) getSvcDescName(svc *descriptor.ServiceDescriptorProto) string {
@@ -238,6 +238,7 @@ package pb
 
 import (
 	"gitee.com/monobytes/gcore/glog"
+	"gitee.com/monobytes/gcore/gprotocol/handler"
 	"gitee.com/monobytes/gcore/gprotocol/interfaces"
 	"google.golang.org/grpc"
 )
@@ -252,13 +253,14 @@ import (
 {{- $svcDescName := getSvcDescName .}}
 
 func init() {
-	interfaces.AddRpcClient("{{$serviceName}}", New{{$nativeCliName}})
+	handler.GetGRPCHandlersMgr().RegisterMsg(MsgDef)
+	interfaces.AddRpcClientGenerator("{{$serviceName}}", New{{$nativeCliName}})
 }
 
 func New{{$genCliName}}() ({{$nativeCliName}}, error) {
 	serviceName := "{{$serviceName}}"
 	target := "discovery://"+serviceName
-	client, err := interfaces.GetRpcProvider().NewMeshClient(target)
+	client, err := interfaces.GetRpcDiscoverer().NewMeshClient(target)
 	if err!= nil {
 		glog.Errorf("failed to discovery {{$nativeCliName}} named: %s! err:%v", serviceName, err)
 		return nil, err
@@ -268,6 +270,7 @@ func New{{$genCliName}}() ({{$nativeCliName}}, error) {
 
 func Add{{$genSvcName}}(svr {{$nativeSvcName}}) {
 	serviceName := "{{$serviceName}}"
+	handler.GetGRPCHandlersMgr().RegisterServer(&{{$svcDescName}}, svr)
 	interfaces.GetRpcProvider().AddServiceProvider(serviceName, &{{$svcDescName}}, svr)
 }
 

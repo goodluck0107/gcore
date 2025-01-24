@@ -11,7 +11,7 @@ service Greeter {
 
   // 客户端初始化接口
   rpc Hello(HelloReq) returns (HelloRsp) {
-    option(google.api.http) = {post: "/v1/greeter/hello", body:"*", response_body: "*"};
+    option(google.api.http) = {get: "/v1/greeter/hello"};
     option(extend.id) = {cmd: GreeterHello};
   }
 }

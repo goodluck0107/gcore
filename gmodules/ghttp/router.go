@@ -1,7 +1,12 @@
 package ghttp
 
 import (
+	"gitee.com/monobytes/gcore/glog"
+	ghandler "gitee.com/monobytes/gcore/gprotocol/handler"
+	"gitee.com/monobytes/gcore/gutils/gconv"
 	"github.com/gofiber/fiber/v3"
+	"google.golang.org/protobuf/proto"
+	"reflect"
 )
 
 type Handler = func(ctx Context) error
@@ -29,10 +34,19 @@ type Router interface {
 	Add(methods []string, path string, handler any, middlewares ...any) Router
 	// Group 路由组
 	Group(prefix string, handlers ...any) Router
+	// AddHandlers 批量添加
+	AddHandlers(mng ghandler.Manager, middlewares ...any) Router
 }
 
 type router struct {
 	app *fiber.App
+}
+
+func (r *router) AddHandlers(mng ghandler.Manager, middlewares ...any) Router {
+	mng.RangeURLHandlers(func(md ghandler.Metadata, handler ghandler.Handler) {
+		r.Add([]string{md.HTTPMethod}, md.Uri, convertHandle(md, handler), middlewares...)
+	})
+	return r
 }
 
 // Get 添加GET请求处理器
@@ -136,6 +150,13 @@ type routeGroup struct {
 	router fiber.Router
 }
 
+func (r *routeGroup) AddHandlers(mng ghandler.Manager, middlewares ...any) Router {
+	mng.RangeURLHandlers(func(md ghandler.Metadata, handler ghandler.Handler) {
+		r.Add([]string{md.HTTPMethod}, md.Uri, convertHandle(md, handler), middlewares...)
+	})
+	return r
+}
+
 // Get 添加GET请求处理器
 func (r *routeGroup) Get(path string, handler any, middlewares ...any) Router {
 	return r.Add([]string{fiber.MethodGet}, path, handler, middlewares...)
@@ -231,4 +252,30 @@ func (r *routeGroup) Group(prefix string, middlewares ...any) Router {
 	}
 
 	return &routeGroup{router: r.router.Group(prefix, handlers...)}
+}
+
+func convertHandle(md ghandler.Metadata, handle ghandler.Handler) fiber.Handler {
+	return func(ctx fiber.Ctx) error {
+		req, ok := reflect.New(md.Req).Interface().(proto.Message)
+		if !ok {
+			return ctx.SendStatus(fiber.StatusInternalServerError)
+		}
+		var err error
+		switch ctx.Method() {
+		case fiber.MethodGet:
+			err = ctx.Bind().Query(req)
+		case fiber.MethodPut, fiber.MethodPost:
+			err = ctx.Bind().Body(req)
+		default:
+			return ctx.SendStatus(fiber.StatusMethodNotAllowed)
+		}
+		if err != nil {
+			glog.Errorf("parse arg failed! method: %s, url: %s, body: %s, error: %v",
+				ctx.Method(), ctx.Path(), gconv.String(ctx.Body()), err,
+			)
+			return ctx.SendStatus(fiber.StatusBadRequest)
+		}
+		ret := handle(ctx.Context(), req)
+		return ctx.JSON(ret)
+	}
 }
