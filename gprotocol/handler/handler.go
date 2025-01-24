@@ -6,7 +6,7 @@ import (
 	"reflect"
 )
 
-type Handler func(ctx context.Context, req proto.Message) Result
+type Handler func(ctx context.Context, dec func(interface{}) error) Result
 
 type Result interface {
 	GetCode() int

@@ -1,12 +1,9 @@
 package ghttp
 
 import (
-	"gitee.com/monobytes/gcore/glog"
+	"fmt"
 	ghandler "gitee.com/monobytes/gcore/gprotocol/handler"
-	"gitee.com/monobytes/gcore/gutils/gconv"
 	"github.com/gofiber/fiber/v3"
-	"google.golang.org/protobuf/proto"
-	"reflect"
 )
 
 type Handler = func(ctx Context) error
@@ -44,7 +41,7 @@ type router struct {
 
 func (r *router) AddHandlers(mng ghandler.Manager, middlewares ...any) Router {
 	mng.RangeURLHandlers(func(md ghandler.Metadata, handler ghandler.Handler) {
-		r.Add([]string{md.HTTPMethod}, md.Uri, convertHandle(md, handler), middlewares...)
+		r.Add([]string{md.HTTPMethod}, md.Uri, handler, middlewares...)
 	})
 	return r
 }
@@ -108,6 +105,8 @@ func (r *router) Add(methods []string, path string, handler any, middlewares ...
 		switch h := middleware.(type) {
 		case fiber.Handler:
 			handlers = append(handlers, h)
+		case ghandler.Handler:
+			handlers = append(handlers, convertHandle(h))
 		case Handler:
 			handlers = append(handlers, func(ctx fiber.Ctx) error {
 				return h(&context{Ctx: ctx})
@@ -118,6 +117,8 @@ func (r *router) Add(methods []string, path string, handler any, middlewares ...
 	switch h := handler.(type) {
 	case fiber.Handler:
 		r.app.Add(methods, path, h, handlers...)
+	case ghandler.Handler:
+		r.app.Add(methods, path, convertHandle(h), handlers...)
 	case Handler:
 		r.app.Add(methods, path, func(ctx fiber.Ctx) error {
 			return h(&context{Ctx: ctx})
@@ -136,6 +137,8 @@ func (r *router) Group(prefix string, middlewares ...any) Router {
 		switch h := middleware.(type) {
 		case fiber.Handler:
 			handlers = append(handlers, h)
+		case ghandler.Handler:
+			handlers = append(handlers, convertHandle(h))
 		case Handler:
 			handlers = append(handlers, func(ctx fiber.Ctx) error {
 				return h(&context{Ctx: ctx})
@@ -152,7 +155,7 @@ type routeGroup struct {
 
 func (r *routeGroup) AddHandlers(mng ghandler.Manager, middlewares ...any) Router {
 	mng.RangeURLHandlers(func(md ghandler.Metadata, handler ghandler.Handler) {
-		r.Add([]string{md.HTTPMethod}, md.Uri, convertHandle(md, handler), middlewares...)
+		r.Add([]string{md.HTTPMethod}, md.Uri, handler, middlewares...)
 	})
 	return r
 }
@@ -216,6 +219,8 @@ func (r *routeGroup) Add(methods []string, path string, handler any, middlewares
 		switch h := middleware.(type) {
 		case fiber.Handler:
 			handlers = append(handlers, h)
+		case ghandler.Handler:
+			handlers = append(handlers, convertHandle(h))
 		case Handler:
 			handlers = append(handlers, func(ctx fiber.Ctx) error {
 				return h(&context{Ctx: ctx})
@@ -226,6 +231,8 @@ func (r *routeGroup) Add(methods []string, path string, handler any, middlewares
 	switch h := handler.(type) {
 	case fiber.Handler:
 		r.router.Add(methods, path, h, handlers...)
+	case ghandler.Handler:
+		r.router.Add(methods, path, convertHandle(h), handlers...)
 	case Handler:
 		r.router.Add(methods, path, func(ctx fiber.Ctx) error {
 			return h(&context{Ctx: ctx})
@@ -244,6 +251,8 @@ func (r *routeGroup) Group(prefix string, middlewares ...any) Router {
 		switch h := middleware.(type) {
 		case fiber.Handler:
 			handlers = append(handlers, h)
+		case ghandler.Handler:
+			handlers = append(handlers, convertHandle(h))
 		case Handler:
 			handlers = append(handlers, func(ctx fiber.Ctx) error {
 				return h(&context{Ctx: ctx})
@@ -254,28 +263,21 @@ func (r *routeGroup) Group(prefix string, middlewares ...any) Router {
 	return &routeGroup{router: r.router.Group(prefix, handlers...)}
 }
 
-func convertHandle(md ghandler.Metadata, handle ghandler.Handler) fiber.Handler {
+func convertHandle(handle ghandler.Handler) fiber.Handler {
 	return func(ctx fiber.Ctx) error {
-		req, ok := reflect.New(md.Req).Interface().(proto.Message)
-		if !ok {
-			return ctx.SendStatus(fiber.StatusInternalServerError)
+		dec := func(req interface{}) error {
+			var err error
+			switch ctx.Method() {
+			case fiber.MethodGet:
+				err = ctx.Bind().Query(req)
+			case fiber.MethodPut, fiber.MethodPost:
+				err = ctx.Bind().Body(req)
+			default:
+				err = fmt.Errorf("not support method: %s", ctx.Method())
+			}
+			return err
 		}
-		var err error
-		switch ctx.Method() {
-		case fiber.MethodGet:
-			err = ctx.Bind().Query(req)
-		case fiber.MethodPut, fiber.MethodPost:
-			err = ctx.Bind().Body(req)
-		default:
-			return ctx.SendStatus(fiber.StatusMethodNotAllowed)
-		}
-		if err != nil {
-			glog.Errorf("parse arg failed! method: %s, url: %s, body: %s, error: %v",
-				ctx.Method(), ctx.Path(), gconv.String(ctx.Body()), err,
-			)
-			return ctx.SendStatus(fiber.StatusBadRequest)
-		}
-		ret := handle(ctx.Context(), req)
+		ret := handle(ctx.Context(), dec)
 		return ctx.JSON(ret)
 	}
 }

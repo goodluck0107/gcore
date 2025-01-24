@@ -5,7 +5,6 @@ import (
 	"gitee.com/monobytes/gcore/gcodes"
 	"gitee.com/monobytes/gcore/glog"
 	"gitee.com/monobytes/gcore/gprotocol/interfaces"
-	"github.com/jinzhu/copier"
 	"github.com/smallnest/rpcx/log"
 	"google.golang.org/grpc"
 	"google.golang.org/protobuf/proto"
@@ -126,10 +125,8 @@ func (s *GRPCHandlersMgr) GenerateHandler(methodInfo *MethodInfo) Handler {
 		handler = methodInfo.Handler
 		srv     = methodInfo.Srv
 	)
-	return func(ctx context.Context, req proto.Message) Result {
-		ret, callErr := handler(srv, ctx, func(i interface{}) error {
-			return copier.Copy(i, req)
-		}, nil)
+	return func(ctx context.Context, dec func(interface{}) error) Result {
+		ret, callErr := handler(srv, ctx, dec, nil)
 		var res result
 		codex := gcodes.Convert(callErr)
 		res.Code = codex.Code()
