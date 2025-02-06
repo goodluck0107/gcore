@@ -48,7 +48,7 @@ func (c *context) Proxy() *Proxy {
 func (c *context) Failure(rst any) error {
 	switch v := rst.(type) {
 	case error:
-		code := gcodes.Convert(v)
+		code, _ := gcodes.Convert(v)
 
 		return c.JSON(&Resp{Code: code.Code(), Message: code.Message()})
 	case *gcodes.Code:

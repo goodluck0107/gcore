@@ -2,6 +2,7 @@ package ghttp
 
 import (
 	"fmt"
+	"gitee.com/monobytes/gcore/gcodes"
 	ghandler "gitee.com/monobytes/gcore/gprotocol/handler"
 	"github.com/gofiber/fiber/v3"
 )
@@ -265,6 +266,7 @@ func (r *routeGroup) Group(prefix string, middlewares ...any) Router {
 
 func convertHandle(handle ghandler.Handler) fiber.Handler {
 	return func(ctx fiber.Ctx) error {
+		ctxWrapper := &context{Ctx: ctx}
 		dec := func(req interface{}) error {
 			var err error
 			switch ctx.Method() {
@@ -277,11 +279,11 @@ func convertHandle(handle ghandler.Handler) fiber.Handler {
 			}
 			return err
 		}
-		ret := handle(ctx.Context(), dec)
-		if ret.GetCode() != 0 {
-			return ctx.JSON(ret)
+		ret, code := handle(ctxWrapper.Context(), dec)
+		if code != gcodes.OK {
+			return ctxWrapper.Failure(code)
 		} else {
-			return ctx.JSON(ret.GetData())
+			return ctxWrapper.JSON(ret)
 		}
 	}
 }

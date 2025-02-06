@@ -100,13 +100,13 @@ func (e *Error) Error() string {
 }
 
 // Convert 将错误信息转换为错误码
-func Convert(err error) *Code {
+func Convert(err error) (*Code, bool) {
 	if err == nil {
-		return OK
+		return OK, false
 	}
 
 	if e, ok := err.(interface{ Code() *Code }); ok {
-		return e.Code()
+		return e.Code(), true
 	}
 
 	text := err.Error()
@@ -114,28 +114,28 @@ func Convert(err error) *Code {
 	index := strings.Index(text, flag)
 
 	if index == -1 {
-		return Unknown
+		return Unknown, false
 	}
 
 	after, found := strings.CutPrefix(text[index+len(flag):], " code = ")
 	if !found {
-		return Unknown
+		return Unknown, false
 	}
 
 	elements := strings.SplitN(after, " ", 2)
 	if len(elements) != 2 {
-		return Unknown
+		return Unknown, false
 	}
 
 	code, err := strconv.Atoi(elements[0])
 	if err != nil {
-		return Unknown
+		return Unknown, false
 	}
 
 	after, found = strings.CutPrefix(elements[1], "desc = ")
 	if !found {
-		return Unknown
+		return Unknown, false
 	}
 
-	return NewCode(code, after)
+	return NewCode(code, after), true
 }

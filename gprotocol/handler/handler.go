@@ -2,11 +2,12 @@ package handler
 
 import (
 	"context"
+	"gitee.com/monobytes/gcore/gcodes"
 	"google.golang.org/protobuf/proto"
 	"reflect"
 )
 
-type Handler func(ctx context.Context, dec func(interface{}) error) Result
+type Handler func(ctx context.Context, dec func(interface{}) error) (interface{}, *gcodes.Code)
 
 type Result interface {
 	GetCode() int

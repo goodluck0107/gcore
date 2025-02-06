@@ -7,7 +7,7 @@ import (
 )
 
 func TestConvert(t *testing.T) {
-	code := gcodes.Convert(errors.New("rpc error: code = Unknown desc = code error: code = 10 desc = account exists"))
+	code, _ := gcodes.Convert(errors.New("rpc error: code = Unknown desc = code error: code = 10 desc = account exists"))
 
 	t.Log(code)
 }

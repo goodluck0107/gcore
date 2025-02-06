@@ -2,12 +2,12 @@ package handler
 
 import (
 	"context"
+	"fmt"
 	"gitee.com/monobytes/gcore/gcodes"
 	"gitee.com/monobytes/gcore/glog"
 	"gitee.com/monobytes/gcore/gprotocol/interfaces"
 	"github.com/smallnest/rpcx/log"
 	"google.golang.org/grpc"
-	"google.golang.org/protobuf/proto"
 	"reflect"
 	"strings"
 	"sync"
@@ -125,24 +125,32 @@ func (s *GRPCHandlersMgr) GenerateHandler(methodInfo *MethodInfo) Handler {
 		handler = methodInfo.Handler
 		srv     = methodInfo.Srv
 	)
-	return func(ctx context.Context, dec func(interface{}) error) Result {
+	return func(ctx context.Context, dec func(interface{}) error) (interface{}, *gcodes.Code) {
 		ret, callErr := handler(srv, ctx, dec, nil)
-		var res result
-		codex := gcodes.Convert(callErr)
-		res.Code = codex.Code()
-		if codex != gcodes.OK {
-			res.Msg = codex.Message()
-		} else {
-			retMsg, ok := ret.(proto.Message)
-			if !ok {
-				codex = gcodes.InternalError
-				res.Code = codex.Code()
-				res.Msg = codex.Message()
-				glog.Errorf("grpc handle return err name:%s, result struct not impl proto.Message yet", methodInfo.Uri)
+		codex, ok := gcodes.Convert(callErr)
+		if callErr != nil {
+			errInfo := fmt.Sprintf("grpc handle name:%s return err: %v", methodInfo.Uri, callErr)
+			if ok {
+				glog.Warn(errInfo)
 			} else {
-				res.Data = retMsg
+				glog.Error(errInfo)
 			}
 		}
-		return &res
+		return ret, codex
+		//res.Code = codex.Code()
+		//if codex != gcodes.OK {
+		//	res.Msg = codex.Message()
+		//} else {
+		//	retMsg, ok := ret.(proto.Message)
+		//	if !ok {
+		//		codex = gcodes.InternalError
+		//		res.Code = codex.Code()
+		//		res.Msg = codex.Message()
+		//		glog.Errorf("grpc handle return err name:%s, result struct not impl proto.Message yet", methodInfo.Uri)
+		//	} else {
+		//		res.Data = retMsg
+		//	}
+		//}
+		//return &res
 	}
 }
