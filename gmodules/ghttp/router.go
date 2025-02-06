@@ -278,6 +278,10 @@ func convertHandle(handle ghandler.Handler) fiber.Handler {
 			return err
 		}
 		ret := handle(ctx.Context(), dec)
-		return ctx.JSON(ret)
+		if ret.GetCode() != 0 {
+			return ctx.JSON(ret)
+		} else {
+			return ctx.JSON(ret.GetData())
+		}
 	}
 }

@@ -259,9 +259,9 @@ func init() {
 
 func New{{$genCliName}}() ({{$nativeCliName}}, error) {
 	serviceName := "{{$serviceName}}"
-	target := "discovery://"+serviceName
+	target := "discovery://" + serviceName
 	client, err := interfaces.GetRpcDiscoverer().NewMeshClient(target)
-	if err!= nil {
+	if err != nil {
 		glog.Errorf("failed to discovery {{$nativeCliName}} named: %s! err:%v", serviceName, err)
 		return nil, err
 	}

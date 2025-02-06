@@ -101,7 +101,7 @@ func (s *Server) Start() {
 		if err = s.app.Listen(listenAddr, fiber.ListenConfig{
 			CertFile:              s.opts.certFile,
 			CertKeyFile:           s.opts.keyFile,
-			DisableStartupMessage: false,
+			DisableStartupMessage: true,
 			EnablePrintRoutes:     true,
 		}); err != nil {
 			glog.Fatal("http server startup failed: %v", err)
