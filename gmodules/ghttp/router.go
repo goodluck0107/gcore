@@ -33,16 +33,16 @@ type Router interface {
 	// Group 路由组
 	Group(prefix string, handlers ...any) Router
 	// AddHandlers 批量添加
-	AddHandlers(mng ghandler.Manager, middlewares ...any) Router
+	AddHandlers(mng ghandler.Manager, authMiddlewares map[int32][]any, middlewares ...any) Router
 }
 
 type router struct {
 	app *fiber.App
 }
 
-func (r *router) AddHandlers(mng ghandler.Manager, middlewares ...any) Router {
+func (r *router) AddHandlers(mng ghandler.Manager, authMiddlewares map[int32][]any, middlewares ...any) Router {
 	mng.RangeURLHandlers(func(md ghandler.Metadata, handler ghandler.Handler) {
-		r.Add([]string{md.HTTPMethod}, md.Uri, handler, middlewares...)
+		r.Add([]string{md.HTTPMethod}, md.Uri, handler, append(authMiddlewares[md.AuthType], middlewares...)...)
 	})
 	return r
 }
@@ -154,9 +154,9 @@ type routeGroup struct {
 	router fiber.Router
 }
 
-func (r *routeGroup) AddHandlers(mng ghandler.Manager, middlewares ...any) Router {
+func (r *routeGroup) AddHandlers(mng ghandler.Manager, authMiddlewares map[int32][]any, middlewares ...any) Router {
 	mng.RangeURLHandlers(func(md ghandler.Metadata, handler ghandler.Handler) {
-		r.Add([]string{md.HTTPMethod}, md.Uri, handler, middlewares...)
+		r.Add([]string{md.HTTPMethod}, md.Uri, handler, append(authMiddlewares[md.AuthType], middlewares...)...)
 	})
 	return r
 }
