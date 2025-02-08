@@ -288,7 +288,7 @@ func convertHandle(handle ghandler.Handler) fiber.Handler {
 			}
 			return ctxWrapper.Failure(code)
 		} else {
-			return ctxWrapper.JSON(ret)
+			return ctxWrapper.Success(ret)
 		}
 	}
 }
