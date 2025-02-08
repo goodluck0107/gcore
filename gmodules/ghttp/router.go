@@ -281,6 +281,9 @@ func convertHandle(handle ghandler.Handler) fiber.Handler {
 		}
 		ret, code := handle(ctxWrapper.Context(), dec)
 		if code != gcodes.OK {
+			if redirect := code.Redirect(); len(redirect) > 0 {
+				return ctxWrapper.Redirect().Status(fiber.StatusTemporaryRedirect).To(redirect)
+			}
 			return ctxWrapper.Failure(code)
 		} else {
 			return ctxWrapper.JSON(ret)

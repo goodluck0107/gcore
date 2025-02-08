@@ -21,8 +21,9 @@ var (
 )
 
 type Code struct {
-	code    int
-	message string
+	code     int
+	message  string
+	redirect string
 }
 
 // NewCode 新建一个错误码
@@ -39,11 +40,23 @@ func (c *Code) Code() int {
 	return c.code
 }
 
+func (c *Code) Redirect() string {
+	return c.redirect
+}
+
 // WithCode 替换新的错误码
 func (c *Code) WithCode(code int) *Code {
 	return &Code{
 		code:    code,
 		message: c.message,
+	}
+}
+
+func (c *Code) WithRedirect(to string) *Code {
+	return &Code{
+		code:     c.code,
+		message:  c.message,
+		redirect: to,
 	}
 }
 

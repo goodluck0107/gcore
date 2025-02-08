@@ -268,6 +268,20 @@ func (e *Error) Replace(text string, condition ...*gcodes.Code) error {
 	return e
 }
 
+func (e *Error) RedirectTo(to string) *Error {
+	var (
+		code    int
+		message string
+	)
+
+	if e != nil && e.code != nil {
+		code = e.code.Code()
+		message = e.code.Message()
+	}
+	
+	return NewError(gcodes.NewCode(code, message).WithRedirect(to))
+}
+
 // String 格式化错误信息
 func (e *Error) String() string {
 	return fmt.Sprintf("%+v", e)
