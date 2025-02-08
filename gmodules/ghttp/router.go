@@ -3,6 +3,7 @@ package ghttp
 import (
 	"fmt"
 	"gitee.com/monobytes/gcore/gcodes"
+	"gitee.com/monobytes/gcore/glog"
 	ghandler "gitee.com/monobytes/gcore/gprotocol/handler"
 	"github.com/gofiber/fiber/v3"
 )
@@ -282,6 +283,7 @@ func convertHandle(handle ghandler.Handler) fiber.Handler {
 		ret, code := handle(ctxWrapper.Context(), dec)
 		if code != gcodes.OK {
 			if redirect := code.Redirect(); len(redirect) > 0 {
+				glog.Warnf("[redirect] [%s] %s -> %s", ctx.IP(), ctx.OriginalURL(), redirect)
 				return ctxWrapper.Redirect().Status(fiber.StatusTemporaryRedirect).To(redirect)
 			}
 			return ctxWrapper.Failure(code)
