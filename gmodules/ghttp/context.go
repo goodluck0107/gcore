@@ -11,7 +11,7 @@ import (
 
 type Resp struct {
 	Code    int    `json:"code"`           // 响应码
-	Message string `json:"message"`        // 响应消息
+	Message string `json:"msg,omitempty"`  // 响应消息
 	Data    any    `json:"data,omitempty"` // 响应数据
 }
 
@@ -23,6 +23,8 @@ type Context interface {
 	Proxy() *Proxy
 	// Failure 失败响应
 	Failure(rst any) error
+	// StatusFailure 失败响应
+	StatusFailure(status int, rst any) error
 	// Success 成功响应
 	Success(data ...any) error
 	// StdRequest 获取标准请求（net/http）
@@ -55,6 +57,20 @@ func (c *context) Failure(rst any) error {
 		return c.JSON(&Resp{Code: v.Code(), Message: v.Message()})
 	default:
 		return c.JSON(&Resp{Code: gcodes.Unknown.Code(), Message: gcodes.Unknown.Message()})
+	}
+}
+
+// StatusFailure 失败响应
+func (c *context) StatusFailure(status int, rst any) error {
+	switch v := rst.(type) {
+	case error:
+		code, _ := gcodes.Convert(v)
+
+		return c.Status(status).JSON(&Resp{Code: code.Code(), Message: code.Message()})
+	case *gcodes.Code:
+		return c.Status(status).JSON(&Resp{Code: v.Code(), Message: v.Message()})
+	default:
+		return c.Status(status).JSON(&Resp{Code: gcodes.Unknown.Code(), Message: gcodes.Unknown.Message()})
 	}
 }
 
