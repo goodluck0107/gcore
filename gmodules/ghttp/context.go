@@ -3,6 +3,7 @@ package ghttp
 import (
 	"bytes"
 	"gitee.com/monobytes/gcore/gcodes"
+	"gitee.com/monobytes/gcore/gprotocol/handler"
 	"github.com/gofiber/fiber/v3"
 	"io"
 	"net/http"
@@ -17,6 +18,7 @@ type Resp struct {
 
 type Context interface {
 	fiber.Ctx
+	HandlersContext
 	// CTX 获取fiber.Ctx
 	CTX() fiber.Ctx
 	// Proxy 获取代理API
@@ -103,4 +105,19 @@ func (c *context) StdRequest() *http.Request {
 	}
 
 	return std
+}
+
+func (c *context) AuthType() int32 {
+	md, _ := c.Locals(LocalKeyHandlerMetadata).(handler.Metadata)
+	return md.AuthType
+}
+
+func (c *context) CMD() int32 {
+	md, _ := c.Locals(LocalKeyHandlerMetadata).(handler.Metadata)
+	return md.Cmd
+}
+
+func (c *context) HandlerMetadata() handler.Metadata {
+	md, _ := c.Locals(LocalKeyHandlerMetadata).(handler.Metadata)
+	return md
 }

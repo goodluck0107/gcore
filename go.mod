@@ -1,8 +1,6 @@
 module gitee.com/monobytes/gcore
 
-go 1.23.0
-
-toolchain go1.23.4
+go 1.23.6
 
 require (
 	dario.cat/mergo v1.0.1
@@ -23,8 +21,10 @@ require (
 	github.com/gorilla/websocket v1.5.3
 	github.com/hashicorp/consul/api v1.31.0
 	github.com/jinzhu/copier v0.4.0
+	github.com/json-iterator/go v1.1.12
 	github.com/klauspost/pgzip v1.2.6
 	github.com/lestrrat-go/file-rotatelogs v2.4.0+incompatible
+	github.com/modern-go/reflect2 v1.0.2
 	github.com/nacos-group/nacos-sdk-go/v2 v2.2.7
 	github.com/nats-io/nats.go v1.38.0
 	github.com/panjf2000/ants/v2 v2.10.0
@@ -114,7 +114,6 @@ require (
 	github.com/jmespath/go-jmespath v0.4.0 // indirect
 	github.com/jonboulle/clockwork v0.4.0 // indirect
 	github.com/josharian/intern v1.0.0 // indirect
-	github.com/json-iterator/go v1.1.12 // indirect
 	github.com/juju/ratelimit v1.0.2 // indirect
 	github.com/julienschmidt/httprouter v1.3.0 // indirect
 	github.com/kavu/go_reuseport v1.5.0 // indirect
@@ -130,7 +129,6 @@ require (
 	github.com/mitchellh/go-homedir v1.1.0 // indirect
 	github.com/mitchellh/mapstructure v1.5.0 // indirect
 	github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd // indirect
-	github.com/modern-go/reflect2 v1.0.2 // indirect
 	github.com/nats-io/nkeys v0.4.9 // indirect
 	github.com/nats-io/nuid v1.0.1 // indirect
 	github.com/oklog/ulid v1.3.1 // indirect

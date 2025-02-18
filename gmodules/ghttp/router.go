@@ -1,9 +1,6 @@
 package ghttp
 
 import (
-	"fmt"
-	"gitee.com/monobytes/gcore/gcodes"
-	"gitee.com/monobytes/gcore/glog"
 	ghandler "gitee.com/monobytes/gcore/gprotocol/handler"
 	"github.com/gofiber/fiber/v3"
 )
@@ -34,16 +31,16 @@ type Router interface {
 	// Group 路由组
 	Group(prefix string, handlers ...any) Router
 	// AddHandlers 批量添加
-	AddHandlers(mng ghandler.Manager, authMiddlewares map[int32][]any, middlewares ...any) Router
+	AddHandlers(mng ghandler.Manager, middlewares ...any) Router
 }
 
 type router struct {
 	app *fiber.App
 }
 
-func (r *router) AddHandlers(mng ghandler.Manager, authMiddlewares map[int32][]any, middlewares ...any) Router {
+func (r *router) AddHandlers(mng ghandler.Manager, middlewares ...any) Router {
 	mng.RangeURLHandlers(func(md ghandler.Metadata, handler ghandler.Handler) {
-		r.Add([]string{md.HTTPMethod}, md.Uri, handler, append(authMiddlewares[md.AuthType], middlewares...)...)
+		r.Add([]string{md.HTTPMethod}, md.Uri, handler, append([]any{handlersMiddleware(md)}, middlewares...)...)
 	})
 	return r
 }
@@ -155,9 +152,9 @@ type routeGroup struct {
 	router fiber.Router
 }
 
-func (r *routeGroup) AddHandlers(mng ghandler.Manager, authMiddlewares map[int32][]any, middlewares ...any) Router {
+func (r *routeGroup) AddHandlers(mng ghandler.Manager, middlewares ...any) Router {
 	mng.RangeURLHandlers(func(md ghandler.Metadata, handler ghandler.Handler) {
-		r.Add([]string{md.HTTPMethod}, md.Uri, handler, append(authMiddlewares[md.AuthType], middlewares...)...)
+		r.Add([]string{md.HTTPMethod}, md.Uri, handler, append([]any{handlersMiddleware(md)}, middlewares...)...)
 	})
 	return r
 }
@@ -263,32 +260,4 @@ func (r *routeGroup) Group(prefix string, middlewares ...any) Router {
 	}
 
 	return &routeGroup{router: r.router.Group(prefix, handlers...)}
-}
-
-func convertHandle(handle ghandler.Handler) fiber.Handler {
-	return func(ctx fiber.Ctx) error {
-		ctxWrapper := &context{Ctx: ctx}
-		dec := func(req interface{}) error {
-			var err error
-			switch ctx.Method() {
-			case fiber.MethodGet:
-				err = ctx.Bind().Query(req)
-			case fiber.MethodPut, fiber.MethodPost:
-				err = ctx.Bind().Body(req)
-			default:
-				err = fmt.Errorf("not support method: %s", ctx.Method())
-			}
-			return err
-		}
-		ret, code := handle(ctxWrapper.Context(), dec)
-		if code != gcodes.OK {
-			if redirect := code.Redirect(); len(redirect) > 0 {
-				glog.Warnf("[redirect] [%s] %s -> %s", ctx.IP(), ctx.OriginalURL(), redirect)
-				return ctxWrapper.Redirect().Status(fiber.StatusTemporaryRedirect).To(redirect)
-			}
-			return ctxWrapper.Failure(code)
-		} else {
-			return ctxWrapper.Success(ret)
-		}
-	}
 }
