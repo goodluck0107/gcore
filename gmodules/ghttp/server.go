@@ -102,7 +102,8 @@ func (s *Server) Start() {
 	s.printInfo(exposeAddr)
 
 	go func() {
-		if err = s.app.Listen(listenAddr, fiber.ListenConfig{
+		glog.Infof("http server startup at: %s, listenAddr:%s, exposeAddr: %s", s.opts.addr, listenAddr, exposeAddr)
+		if err = s.app.Listen(s.opts.addr, fiber.ListenConfig{
 			CertFile:              s.opts.certFile,
 			CertKeyFile:           s.opts.keyFile,
 			DisableStartupMessage: true,

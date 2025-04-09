@@ -36,7 +36,6 @@ func (h *WriterHook) Levels() []logrus.Level {
 func (h *WriterHook) Fire(entry *logrus.Entry) error {
 	h.mu.Lock()
 	defer h.mu.Unlock()
-
 	data, err := entry.Logger.Formatter.Format(entry)
 	if err != nil {
 		return err

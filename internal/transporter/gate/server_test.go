@@ -65,7 +65,7 @@ func (p *provider) Broadcast(ctx context.Context, kind gsession.Kind, message []
 	return
 }
 
-// Stat 统计会话总数
+// DoStat 统计会话总数
 func (p *provider) Stat(ctx context.Context, kind gsession.Kind) (total int64, err error) {
 	return
 }
