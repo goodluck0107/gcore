@@ -36,12 +36,12 @@ const (
 var (
 	AuthType_name = map[int32]string{
 		0: "AuthNone",
-		1: "AuthUser",
+		1: "JwtAuthToken",
 		2: "AuthManager",
 	}
 	AuthType_value = map[string]int32{
 		"AuthNone":    0,
-		"AuthUser":    1,
+		"JwtAuthToken":    1,
 		"AuthManager": 2,
 	}
 )

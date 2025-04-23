@@ -2,8 +2,10 @@ package genmsg
 
 import (
 	"fmt"
+	"gitee.com/monobytes/gcore/gplugin/protoc-gen-idmsg/pb"
 	options "google.golang.org/genproto/googleapis/api/annotations"
-	"protoc-gen-idmsg/pb"
+	"google.golang.org/protobuf/compiler/protogen"
+	"google.golang.org/protobuf/reflect/protoreflect"
 
 	"google.golang.org/protobuf/proto"
 
@@ -145,4 +147,28 @@ func extractAuthMethodOptions(meth *descriptor.MethodDescriptorProto) (*pb.AuthT
 		return nil, fmt.Errorf("extension is %T; want an HttpRule", ext)
 	}
 	return opts, nil
+}
+
+func isExternalField(currentFile *protogen.File, field *protogen.Field) bool {
+	// 获取字段类型所在的文件
+	var typeIdent *protogen.GoIdent
+	switch field.Desc.Kind() {
+	case protoreflect.MessageKind:
+		if field.Message != nil {
+			typeIdent = &field.Message.GoIdent
+		}
+	case protoreflect.EnumKind:
+		if field.Enum != nil {
+			typeIdent = &field.Enum.GoIdent
+		}
+	default:
+		return false // 基本类型不可能是外部包
+	}
+
+	if typeIdent == nil {
+		return false
+	}
+
+	// 比较Go包导入路径
+	return typeIdent.GoImportPath != currentFile.GoImportPath
 }

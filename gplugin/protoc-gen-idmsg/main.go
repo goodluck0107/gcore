@@ -4,10 +4,10 @@ import (
 	"bytes"
 	"flag"
 	"fmt"
+	"gitee.com/monobytes/gcore/gplugin/protoc-gen-idmsg/genmsg"
+	_ "gitee.com/monobytes/gcore/gplugin/protoc-gen-idmsg/pb"
 	"io/ioutil"
 	"os"
-	"protoc-gen-idmsg/genmsg"
-	_ "protoc-gen-idmsg/pb"
 	"strings"
 
 	plugin "google.golang.org/protobuf/types/pluginpb"
