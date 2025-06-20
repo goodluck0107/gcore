@@ -251,8 +251,8 @@ func (j *JWT) ExtractIdentity(token string, ignoreExpired ...bool) (interface{},
 }
 
 // DestroyIdentity Destroy the identification mark.
-func (j *JWT) DestroyIdentity(identity interface{}) error {
-	return j.removeIdentity(identity)
+func (j *JWT) DestroyIdentity(identity ...interface{}) error {
+	return j.removeIdentity(identity...)
 }
 
 // IdentityKey Retrieve identity key.
@@ -377,7 +377,7 @@ func (j *JWT) verifyIdentity(claims jwt.MapClaims, ignoreMissed bool) error {
 }
 
 // remove identification mark.
-func (j *JWT) removeIdentity(identity interface{}) error {
+func (j *JWT) removeIdentity(identity ...interface{}) error {
 	if j.opts.identityKey == "" {
 		return nil
 	}
@@ -386,9 +386,12 @@ func (j *JWT) removeIdentity(identity interface{}) error {
 		return nil
 	}
 
-	key := fmt.Sprintf(defaultIdentityKey, j.opts.identityKey, gconv.String(identity))
+	removeKeys := make([]interface{}, 0, len(identity))
+	for _, v := range identity {
+		removeKeys = append(removeKeys, fmt.Sprintf(defaultIdentityKey, j.opts.identityKey, gconv.String(v)))
+	}
 
-	_, err := j.opts.store.Remove(j.opts.ctx, key)
+	_, err := j.opts.store.Remove(j.opts.ctx, removeKeys...)
 	return err
 }
 
