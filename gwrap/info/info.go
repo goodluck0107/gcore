@@ -53,7 +53,11 @@ func PrintBoxInfo(name string, infos ...string) {
 
 func buildRowInfo(info string) string {
 	str := fmt.Sprintf("%s %s", verticalBorder, info)
-	str += strings.Repeat(" ", boxWidth-utf8.RuneCountInString(str)-1)
+	count := boxWidth - utf8.RuneCountInString(str) - 1
+	if count < 0 {
+		count = 0
+	}
+	str += strings.Repeat(" ", count)
 	str += verticalBorder
 	return str
 }
