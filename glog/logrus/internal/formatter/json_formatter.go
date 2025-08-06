@@ -34,7 +34,7 @@ func (f *JsonFormatter) Format(entry *logrus.Entry) ([]byte, error) {
 		b = &bytes.Buffer{}
 	}
 
-	levelText := strings.ToUpper(entry.Level.String())[0:4]
+	levelText := strings.ToLower(entry.Level.String())
 
 	fmt.Fprintf(b, `{"%s":"%s"`, fieldKeyLevel, levelText)
 	fmt.Fprintf(b, `,"%s":"%s"`, fieldKeyTime, entry.Time.Format(f.TimeFormat))
