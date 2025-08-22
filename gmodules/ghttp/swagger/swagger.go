@@ -2,6 +2,7 @@ package swagger
 
 import (
 	"gitee.com/monobytes/gcore/glog"
+	"github.com/bytedance/sonic"
 	"github.com/go-openapi/runtime/middleware"
 	"github.com/gofiber/fiber/v3"
 	"github.com/gofiber/fiber/v3/middleware/adaptor"
@@ -10,6 +11,23 @@ import (
 	"path"
 	"strings"
 )
+
+var Doc Docs
+
+type Docs struct {
+	Swagger string `json:"swagger"`
+	Info    struct {
+		Title   string `json:"title"`
+		Version string `json:"version"`
+	}
+	Consumes []string `json:"consumes"`
+	Produces []string `json:"produces"`
+	Paths    map[string]map[string]struct {
+		Summary     string   `json:"summary"`
+		OperationId string   `json:"operationId"`
+		Tags        []string `json:"tags"`
+	} `json:"paths"`
+}
 
 type Config struct {
 	Title            string // 文档标题
@@ -38,6 +56,10 @@ func New(cfg Config) fiber.Handler {
 	rawSpec, err := os.ReadFile(cfg.FilePath)
 	if err != nil {
 		glog.Fatalf("Failed to read provided Swagger file (%s): %v", cfg.FilePath, err)
+	}
+
+	if err := sonic.Unmarshal(rawSpec, &Doc); err != nil {
+		glog.Fatalf("Failed to unmarshal Swagger file (%s): %v", cfg.FilePath, err)
 	}
 
 	// Generate URL path's for the middleware
