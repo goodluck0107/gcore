@@ -32,6 +32,8 @@ type Router interface {
 	Group(prefix string, handlers ...any) Router
 	// AddHandlers 批量添加
 	AddHandlers(mng ghandler.Manager, middlewares ...any) Router
+	// Use 添加中间件
+	Use(handlers ...any) Router
 }
 
 type router struct {
@@ -93,6 +95,11 @@ func (r *router) Patch(path string, handler any, middlewares ...any) Router {
 // All 添加任意请求处理器
 func (r *router) All(path string, handler any, middlewares ...any) Router {
 	return r.Add(fiber.DefaultMethods, path, handler, middlewares...)
+}
+
+func (r *router) Use(handlers ...any) Router {
+	r.app.Use(handlers...)
+	return r
 }
 
 // Add 添加路由处理器
@@ -207,6 +214,11 @@ func (r *routeGroup) Patch(path string, handler any, middlewares ...any) Router 
 // All 添加任意请求处理器
 func (r *routeGroup) All(path string, handler any, middlewares ...any) Router {
 	return r.Add(fiber.DefaultMethods, path, handler, middlewares...)
+}
+
+func (r *routeGroup) Use(handlers ...any) Router {
+	r.router.Use(handlers...)
+	return r
 }
 
 // Add 添加路由处理器
