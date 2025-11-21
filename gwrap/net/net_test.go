@@ -6,7 +6,7 @@ import (
 )
 
 func TestParseAddr(t *testing.T) {
-	listenAddr, exposeAddr, err := net.ParseAddr(":0")
+	listenAddr, exposeAddr, err := net.ParseAddr(":8889")
 	if err != nil {
 		t.Fatal(err)
 	}

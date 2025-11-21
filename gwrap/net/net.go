@@ -2,6 +2,7 @@ package net
 
 import (
 	"gitee.com/monobytes/gcore/gerrors"
+	"gitee.com/monobytes/gcore/glog"
 	"net"
 	"strconv"
 )
@@ -13,6 +14,7 @@ func ParseAddr(addr string) (listenAddr, exposeAddr string, err error) {
 	if addr != "" {
 		host, port, err = net.SplitHostPort(addr)
 		if err != nil {
+			glog.Errorf("parse addr %s error: %v", addr, err)
 			return
 		}
 	}
@@ -20,6 +22,7 @@ func ParseAddr(addr string) (listenAddr, exposeAddr string, err error) {
 	if port == "" || port == "0" {
 		p, err := AssignRandPort(host)
 		if err != nil {
+			glog.Errorf("assign rand port error: %v", err)
 			return "", "", err
 		}
 		port = strconv.Itoa(p)
@@ -29,14 +32,14 @@ func ParseAddr(addr string) (listenAddr, exposeAddr string, err error) {
 		listenAddr = net.JoinHostPort(host, port)
 		exposeAddr = listenAddr
 	} else {
-		ip, err := InternalIP()
-		if err != nil {
-			return "", "", err
+		ip, ipe := InternalIP()
+		if ipe != nil {
+			glog.Warnf("get internal ip error: %v", ipe)
+			ip = "localhost"
 		}
 		listenAddr = net.JoinHostPort("0.0.0.0", port)
 		exposeAddr = net.JoinHostPort(ip, port)
 	}
-
 	return
 }
 
@@ -59,6 +62,7 @@ func ExtractPort(addr net.Addr) (int, error) {
 func InternalIP() (string, error) {
 	ifaces, err := net.Interfaces()
 	if err != nil {
+		glog.Errorf("get interfaces error: %v", err)
 		return "", err
 	}
 
@@ -110,6 +114,7 @@ func InternalIP() (string, error) {
 	if ip != "" {
 		return ip, nil
 	} else {
+		glog.Errorf("not found ip address")
 		return "", gerrors.New("not found ip address")
 	}
 }
