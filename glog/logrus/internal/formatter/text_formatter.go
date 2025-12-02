@@ -3,7 +3,7 @@ package formatter
 import (
 	"bytes"
 	"fmt"
-	"gitee.com/monobytes/gcore/glog/logrus/internal/define"
+	"github.com/goodluck0107/gcore/glog/logrus/internal/define"
 	"github.com/sirupsen/logrus"
 	"path/filepath"
 	"runtime"

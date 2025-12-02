@@ -3,10 +3,10 @@ package etcd_test
 import (
 	"context"
 	"fmt"
-	"gitee.com/monobytes/gcore/gcluster"
-	"gitee.com/monobytes/gcore/gregistry"
-	"gitee.com/monobytes/gcore/gregistry/etcd"
-	"gitee.com/monobytes/gcore/gwrap/net"
+	"github.com/goodluck0107/gcore/gcluster"
+	"github.com/goodluck0107/gcore/gregistry"
+	"github.com/goodluck0107/gcore/gregistry/etcd"
+	"github.com/goodluck0107/gcore/gwrap/net"
 	"testing"
 	"time"
 )

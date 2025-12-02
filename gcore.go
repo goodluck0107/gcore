@@ -1,7 +1,7 @@
 package gcore
 
 import (
-	"gitee.com/monobytes/gcore/gengine"
+	"github.com/goodluck0107/gcore/gengine"
 )
 
 var engine gengine.Engine

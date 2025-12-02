@@ -1,9 +1,9 @@
 package gmode
 
 import (
-	"gitee.com/monobytes/gcore/genv"
-	"gitee.com/monobytes/gcore/getc"
-	"gitee.com/monobytes/gcore/gflag"
+	"github.com/goodluck0107/gcore/genv"
+	"github.com/goodluck0107/gcore/getc"
+	"github.com/goodluck0107/gcore/gflag"
 )
 
 const (

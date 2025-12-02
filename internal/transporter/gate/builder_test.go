@@ -2,10 +2,10 @@ package gate_test
 
 import (
 	"context"
-	"gitee.com/monobytes/gcore/gcluster"
-	"gitee.com/monobytes/gcore/gsession"
-	"gitee.com/monobytes/gcore/gutils/guuid"
-	"gitee.com/monobytes/gcore/internal/transporter/gate"
+	"github.com/goodluck0107/gcore/gcluster"
+	"github.com/goodluck0107/gcore/gsession"
+	"github.com/goodluck0107/gcore/gutils/guuid"
+	"github.com/goodluck0107/gcore/internal/transporter/gate"
 	"testing"
 )
 

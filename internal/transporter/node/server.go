@@ -2,12 +2,12 @@ package node
 
 import (
 	"context"
-	"gitee.com/monobytes/gcore/gcluster"
-	"gitee.com/monobytes/gcore/gerrors"
-	"gitee.com/monobytes/gcore/internal/transporter/internal/codes"
-	"gitee.com/monobytes/gcore/internal/transporter/internal/protocol"
-	"gitee.com/monobytes/gcore/internal/transporter/internal/route"
-	"gitee.com/monobytes/gcore/internal/transporter/internal/server"
+	"github.com/goodluck0107/gcore/gcluster"
+	"github.com/goodluck0107/gcore/gerrors"
+	"github.com/goodluck0107/gcore/internal/transporter/internal/codes"
+	"github.com/goodluck0107/gcore/internal/transporter/internal/protocol"
+	"github.com/goodluck0107/gcore/internal/transporter/internal/route"
+	"github.com/goodluck0107/gcore/internal/transporter/internal/server"
 )
 
 type Server struct {

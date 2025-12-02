@@ -1,8 +1,8 @@
 package zap_test
 
 import (
-	"gitee.com/monobytes/gcore/glog"
-	"gitee.com/monobytes/gcore/glog/zap"
+	"github.com/goodluck0107/gcore/glog"
+	"github.com/goodluck0107/gcore/glog/zap"
 	"testing"
 )
 

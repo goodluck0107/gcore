@@ -1,7 +1,7 @@
 package gos_test
 
 import (
-	"gitee.com/monobytes/gcore/gutils/gos"
+	"github.com/goodluck0107/gcore/gutils/gos"
 	"testing"
 )
 

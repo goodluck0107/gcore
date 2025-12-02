@@ -1,6 +1,6 @@
 package chains
 
-import "gitee.com/monobytes/gcore/gutils/gcall"
+import "github.com/goodluck0107/gcore/gutils/gcall"
 
 type Chain struct {
 	head *node

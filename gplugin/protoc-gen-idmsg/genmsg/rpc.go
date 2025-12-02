@@ -237,9 +237,9 @@ func (g *RpcData) renderCodeV2(fileData *FileData) string {
 package pb
 
 import (
-	"gitee.com/monobytes/gcore/glog"
-	"gitee.com/monobytes/gcore/gprotocol/handler"
-	"gitee.com/monobytes/gcore/gprotocol/interfaces"
+	"github.com/goodluck0107/gcore/glog"
+	"github.com/goodluck0107/gcore/gprotocol/handler"
+	"github.com/goodluck0107/gcore/gprotocol/interfaces"
 	"google.golang.org/grpc"
 )
 

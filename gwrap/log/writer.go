@@ -3,8 +3,8 @@ package log
 import (
 	"bufio"
 	"fmt"
-	"gitee.com/monobytes/gcore/gerrors"
-	"gitee.com/monobytes/gcore/gutils/gfile"
+	"github.com/goodluck0107/gcore/gerrors"
+	"github.com/goodluck0107/gcore/gutils/gfile"
 	gzip "github.com/klauspost/pgzip"
 	"io"
 	"os"

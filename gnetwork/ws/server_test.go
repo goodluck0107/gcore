@@ -1,11 +1,11 @@
 package ws_test
 
 import (
-	"gitee.com/monobytes/gcore/glog"
-	"gitee.com/monobytes/gcore/gnetwork"
-	"gitee.com/monobytes/gcore/gnetwork/ws"
-	"gitee.com/monobytes/gcore/gpacket"
-	"gitee.com/monobytes/gcore/gutils/gcall"
+	"github.com/goodluck0107/gcore/glog"
+	"github.com/goodluck0107/gcore/gnetwork"
+	"github.com/goodluck0107/gcore/gnetwork/ws"
+	"github.com/goodluck0107/gcore/gpacket"
+	"github.com/goodluck0107/gcore/gutils/gcall"
 	"net/http"
 	"testing"
 )

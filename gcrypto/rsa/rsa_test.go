@@ -1,9 +1,9 @@
 package rsa_test
 
 import (
-	"gitee.com/monobytes/gcore/gcrypto/rsa"
-	"gitee.com/monobytes/gcore/gutils/grand"
-	"gitee.com/monobytes/gcore/gwrap/hash"
+	"github.com/goodluck0107/gcore/gcrypto/rsa"
+	"github.com/goodluck0107/gcore/gutils/grand"
+	"github.com/goodluck0107/gcore/gwrap/hash"
 	"testing"
 )
 

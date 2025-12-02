@@ -2,7 +2,7 @@ package etcd
 
 import (
 	"context"
-	"gitee.com/monobytes/gcore/gconfig"
+	"github.com/goodluck0107/gcore/gconfig"
 	"go.etcd.io/etcd/api/v3/mvccpb"
 	"go.etcd.io/etcd/client/v3"
 	"path/filepath"

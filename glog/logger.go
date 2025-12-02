@@ -2,7 +2,7 @@ package glog
 
 import (
 	"fmt"
-	"gitee.com/monobytes/gcore/gmode"
+	"github.com/goodluck0107/gcore/gmode"
 	"io"
 	"os"
 	"sync"

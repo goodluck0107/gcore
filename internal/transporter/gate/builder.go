@@ -1,8 +1,8 @@
 package gate
 
 import (
-	"gitee.com/monobytes/gcore/gcluster"
-	"gitee.com/monobytes/gcore/internal/transporter/internal/client"
+	"github.com/goodluck0107/gcore/gcluster"
+	"github.com/goodluck0107/gcore/internal/transporter/internal/client"
 	"golang.org/x/sync/singleflight"
 	"sync"
 )

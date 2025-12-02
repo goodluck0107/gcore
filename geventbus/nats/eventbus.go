@@ -2,7 +2,7 @@ package nats
 
 import (
 	"context"
-	"gitee.com/monobytes/gcore/geventbus"
+	"github.com/goodluck0107/gcore/geventbus"
 	"github.com/nats-io/nats.go"
 	"sync"
 )

@@ -2,9 +2,9 @@ package node
 
 import (
 	"context"
-	"gitee.com/monobytes/gcore/gcluster"
-	"gitee.com/monobytes/gcore/gerrors"
-	"gitee.com/monobytes/gcore/gpacket"
+	"github.com/goodluck0107/gcore/gcluster"
+	"github.com/goodluck0107/gcore/gerrors"
+	"github.com/goodluck0107/gcore/gpacket"
 )
 
 type provider struct {

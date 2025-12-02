@@ -2,8 +2,8 @@ package redis_test
 
 import (
 	"context"
-	"gitee.com/monobytes/gcore/geventbus"
-	"gitee.com/monobytes/gcore/geventbus/redis"
+	"github.com/goodluck0107/gcore/geventbus"
+	"github.com/goodluck0107/gcore/geventbus/redis"
 	"log"
 	"testing"
 	"time"

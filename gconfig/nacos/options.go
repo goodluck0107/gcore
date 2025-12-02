@@ -2,8 +2,8 @@ package nacos
 
 import (
 	"context"
-	"gitee.com/monobytes/gcore/gconfig"
-	"gitee.com/monobytes/gcore/getc"
+	"github.com/goodluck0107/gcore/gconfig"
+	"github.com/goodluck0107/gcore/getc"
 	"github.com/nacos-group/nacos-sdk-go/v2/clients/config_client"
 	"time"
 )

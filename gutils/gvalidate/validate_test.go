@@ -1,7 +1,7 @@
 package gvalidate_test
 
 import (
-	"gitee.com/monobytes/gcore/gutils/gvalidate"
+	"github.com/goodluck0107/gcore/gutils/gvalidate"
 	"testing"
 )
 

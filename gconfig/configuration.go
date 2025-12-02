@@ -1,6 +1,6 @@
 package gconfig
 
-import "gitee.com/monobytes/gcore/gerrors"
+import "github.com/goodluck0107/gcore/gerrors"
 
 // Configuration 配置项
 type Configuration struct {

@@ -1,10 +1,10 @@
 package dispatcher
 
 import (
-	"gitee.com/monobytes/gcore/gerrors"
-	"gitee.com/monobytes/gcore/glog"
-	"gitee.com/monobytes/gcore/gregistry"
-	"gitee.com/monobytes/gcore/gwrap/endpoint"
+	"github.com/goodluck0107/gcore/gerrors"
+	"github.com/goodluck0107/gcore/glog"
+	"github.com/goodluck0107/gcore/gregistry"
+	"github.com/goodluck0107/gcore/gwrap/endpoint"
 	"sync"
 )
 

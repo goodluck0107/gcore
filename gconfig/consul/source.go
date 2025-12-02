@@ -2,7 +2,7 @@ package consul
 
 import (
 	"context"
-	"gitee.com/monobytes/gcore/gconfig"
+	"github.com/goodluck0107/gcore/gconfig"
 	"github.com/hashicorp/consul/api"
 	"path/filepath"
 	"strings"

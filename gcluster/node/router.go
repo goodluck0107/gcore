@@ -1,8 +1,8 @@
 package node
 
 import (
-	"gitee.com/monobytes/gcore/gcluster"
-	"gitee.com/monobytes/gcore/glog"
+	"github.com/goodluck0107/gcore/gcluster"
+	"github.com/goodluck0107/gcore/glog"
 )
 
 type RouteHandler func(ctx Context)

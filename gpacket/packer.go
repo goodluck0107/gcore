@@ -3,9 +3,9 @@ package gpacket
 import (
 	"bytes"
 	"encoding/binary"
-	"gitee.com/monobytes/gcore/gerrors"
-	"gitee.com/monobytes/gcore/glog"
-	"gitee.com/monobytes/gcore/gwrap/buffer"
+	"github.com/goodluck0107/gcore/gerrors"
+	"github.com/goodluck0107/gcore/glog"
+	"github.com/goodluck0107/gcore/gwrap/buffer"
 	"io"
 	"sync"
 	"time"

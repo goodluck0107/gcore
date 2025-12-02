@@ -1,6 +1,6 @@
 package client
 
-import "gitee.com/monobytes/gcore/gcluster"
+import "github.com/goodluck0107/gcore/gcluster"
 
 type Options struct {
 	Addr         string        // 连接地址

@@ -2,7 +2,7 @@ package gcall_test
 
 import (
 	"context"
-	"gitee.com/monobytes/gcore/gutils/gcall"
+	"github.com/goodluck0107/gcore/gutils/gcall"
 	"testing"
 	"time"
 )

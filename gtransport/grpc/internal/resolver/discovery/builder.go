@@ -2,9 +2,9 @@ package discovery
 
 import (
 	"context"
-	"gitee.com/monobytes/gcore/gcluster"
-	"gitee.com/monobytes/gcore/glog"
-	"gitee.com/monobytes/gcore/gregistry"
+	"github.com/goodluck0107/gcore/gcluster"
+	"github.com/goodluck0107/gcore/glog"
+	"github.com/goodluck0107/gcore/gregistry"
 	"google.golang.org/grpc/resolver"
 	"sync"
 	"time"

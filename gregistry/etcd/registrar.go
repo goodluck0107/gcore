@@ -3,7 +3,7 @@ package etcd
 import (
 	"context"
 	"fmt"
-	"gitee.com/monobytes/gcore/gregistry"
+	"github.com/goodluck0107/gcore/gregistry"
 	clientv3 "go.etcd.io/etcd/client/v3"
 	"time"
 )

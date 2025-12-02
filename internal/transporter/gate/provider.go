@@ -2,8 +2,8 @@ package gate
 
 import (
 	"context"
-	"gitee.com/monobytes/gcore/gcluster"
-	"gitee.com/monobytes/gcore/gsession"
+	"github.com/goodluck0107/gcore/gcluster"
+	"github.com/goodluck0107/gcore/gsession"
 )
 
 type Provider interface {

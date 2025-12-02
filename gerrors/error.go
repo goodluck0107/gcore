@@ -2,8 +2,8 @@ package gerrors
 
 import (
 	"fmt"
-	"gitee.com/monobytes/gcore/gcodes"
-	"gitee.com/monobytes/gcore/gwrap/stack"
+	"github.com/goodluck0107/gcore/gcodes"
+	"github.com/goodluck0107/gcore/gwrap/stack"
 	"io"
 )
 
@@ -278,7 +278,7 @@ func (e *Error) RedirectTo(to string) *Error {
 		code = e.code.Code()
 		message = e.code.Message()
 	}
-	
+
 	return NewError(gcodes.NewCode(code, message).WithRedirect(to))
 }
 

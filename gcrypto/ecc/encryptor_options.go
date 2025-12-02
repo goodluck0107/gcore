@@ -1,8 +1,8 @@
 package ecc
 
 import (
-	"gitee.com/monobytes/gcore/getc"
-	"gitee.com/monobytes/gcore/gutils/gconv"
+	"github.com/goodluck0107/gcore/getc"
+	"github.com/goodluck0107/gcore/gutils/gconv"
 )
 
 const (

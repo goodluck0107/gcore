@@ -1,7 +1,7 @@
 package gstring_test
 
 import (
-	"gitee.com/monobytes/gcore/gutils/gstring"
+	"github.com/goodluck0107/gcore/gutils/gstring"
 	"testing"
 )
 

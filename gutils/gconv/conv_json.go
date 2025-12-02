@@ -1,7 +1,7 @@
 package gconv
 
 import (
-	"gitee.com/monobytes/gcore/gencoding/json"
+	"github.com/goodluck0107/gcore/gencoding/json"
 	"reflect"
 )
 

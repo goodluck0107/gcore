@@ -1,9 +1,9 @@
 package nats
 
 import (
-	"gitee.com/monobytes/gcore/geventbus"
-	"gitee.com/monobytes/gcore/glog"
-	"gitee.com/monobytes/gcore/gtask"
+	"github.com/goodluck0107/gcore/geventbus"
+	"github.com/goodluck0107/gcore/glog"
+	"github.com/goodluck0107/gcore/gtask"
 	"github.com/nats-io/nats.go"
 	"reflect"
 	"sync"

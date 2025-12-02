@@ -1,8 +1,8 @@
 package node
 
 import (
-	"gitee.com/monobytes/gcore/gcluster"
-	"gitee.com/monobytes/gcore/gutils/gcall"
+	"github.com/goodluck0107/gcore/gcluster"
+	"github.com/goodluck0107/gcore/gutils/gcall"
 	"sync"
 	"sync/atomic"
 	"time"

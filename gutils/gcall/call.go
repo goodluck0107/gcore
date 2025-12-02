@@ -3,7 +3,7 @@ package gcall
 import (
 	"context"
 	"fmt"
-	"gitee.com/monobytes/gcore/glog"
+	"github.com/goodluck0107/gcore/glog"
 	"reflect"
 	"strings"
 	"time"

@@ -1,8 +1,8 @@
 package memcache
 
 import (
-	"gitee.com/monobytes/gcore/getc"
 	"github.com/bradfitz/gomemcache/memcache"
+	"github.com/goodluck0107/gcore/getc"
 	"time"
 )
 

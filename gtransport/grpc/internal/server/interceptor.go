@@ -2,7 +2,7 @@ package server
 
 import (
 	"context"
-	"gitee.com/monobytes/gcore/glog"
+	"github.com/goodluck0107/gcore/glog"
 	"google.golang.org/grpc"
 	"runtime"
 )

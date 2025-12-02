@@ -3,8 +3,8 @@ package gcall
 import (
 	"bytes"
 	"fmt"
-	"gitee.com/monobytes/gcore/glog"
-	"gitee.com/monobytes/gcore/gutils/gconv"
+	"github.com/goodluck0107/gcore/glog"
+	"github.com/goodluck0107/gcore/gutils/gconv"
 	"runtime"
 )
 

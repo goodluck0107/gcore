@@ -2,8 +2,8 @@ package nacos
 
 import (
 	"context"
-	"gitee.com/monobytes/gcore/glog"
-	"gitee.com/monobytes/gcore/gregistry"
+	"github.com/goodluck0107/gcore/glog"
+	"github.com/goodluck0107/gcore/gregistry"
 	"github.com/nacos-group/nacos-sdk-go/v2/model"
 	"github.com/nacos-group/nacos-sdk-go/v2/vo"
 	"sync"

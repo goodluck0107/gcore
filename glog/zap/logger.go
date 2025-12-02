@@ -2,9 +2,9 @@ package zap
 
 import (
 	"fmt"
-	"gitee.com/monobytes/gcore/glog"
-	"gitee.com/monobytes/gcore/glog/zap/internal/encoder"
-	"gitee.com/monobytes/gcore/gmode"
+	"github.com/goodluck0107/gcore/glog"
+	"github.com/goodluck0107/gcore/glog/zap/internal/encoder"
+	"github.com/goodluck0107/gcore/gmode"
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
 	"os"

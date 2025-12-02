@@ -2,8 +2,8 @@ package kafka
 
 import (
 	"context"
-	"gitee.com/monobytes/gcore/geventbus"
 	"github.com/IBM/sarama"
+	"github.com/goodluck0107/gcore/geventbus"
 	"sync"
 )
 

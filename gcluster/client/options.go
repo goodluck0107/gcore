@@ -2,11 +2,11 @@ package client
 
 import (
 	"context"
-	"gitee.com/monobytes/gcore/gcrypto"
-	"gitee.com/monobytes/gcore/gencoding"
-	"gitee.com/monobytes/gcore/getc"
-	"gitee.com/monobytes/gcore/gnetwork"
-	"gitee.com/monobytes/gcore/gutils/guuid"
+	"github.com/goodluck0107/gcore/gcrypto"
+	"github.com/goodluck0107/gcore/gencoding"
+	"github.com/goodluck0107/gcore/getc"
+	"github.com/goodluck0107/gcore/gnetwork"
+	"github.com/goodluck0107/gcore/gutils/guuid"
 	"time"
 )
 

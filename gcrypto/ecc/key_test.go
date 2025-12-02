@@ -2,7 +2,7 @@ package ecc_test
 
 import (
 	"fmt"
-	"gitee.com/monobytes/gcore/gcrypto/ecc"
+	"github.com/goodluck0107/gcore/gcrypto/ecc"
 	"testing"
 )
 

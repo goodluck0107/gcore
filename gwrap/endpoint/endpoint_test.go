@@ -1,7 +1,7 @@
 package endpoint_test
 
 import (
-	"gitee.com/monobytes/gcore/gwrap/endpoint"
+	"github.com/goodluck0107/gcore/gwrap/endpoint"
 	"testing"
 )
 

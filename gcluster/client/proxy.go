@@ -1,8 +1,8 @@
 package client
 
 import (
-	"gitee.com/monobytes/gcore/gcluster"
-	"gitee.com/monobytes/gcore/gnetwork"
+	"github.com/goodluck0107/gcore/gcluster"
+	"github.com/goodluck0107/gcore/gnetwork"
 )
 
 type Proxy struct {

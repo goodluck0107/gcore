@@ -1,10 +1,9 @@
-module gitee.com/monobytes/gcore
+module github.com/goodluck0107/gcore
 
 go 1.23.6
 
 require (
 	dario.cat/mergo v1.0.1
-	gitee.com/monobytes/gcore/glocate/redis/v2 v2.0.0-20250122103500-24aa82505aa7
 	github.com/BurntSushi/toml v1.4.0
 	github.com/IBM/sarama v1.45.0
 	github.com/aliyun/aliyun-log-go-sdk v0.1.93

@@ -2,9 +2,9 @@ package ghttp
 
 import (
 	"bytes"
-	"gitee.com/monobytes/gcore/gcodes"
-	"gitee.com/monobytes/gcore/gprotocol/handler"
 	"github.com/gofiber/fiber/v3"
+	"github.com/goodluck0107/gcore/gcodes"
+	"github.com/goodluck0107/gcore/gprotocol/handler"
 	"io"
 	"net/http"
 	"net/url"

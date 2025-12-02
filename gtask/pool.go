@@ -1,8 +1,8 @@
 package gtask
 
 import (
-	"gitee.com/monobytes/gcore/glog"
-	"gitee.com/monobytes/gcore/gutils/gcall"
+	"github.com/goodluck0107/gcore/glog"
+	"github.com/goodluck0107/gcore/gutils/gcall"
 	"github.com/panjf2000/ants/v2"
 )
 

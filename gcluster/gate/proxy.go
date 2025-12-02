@@ -2,12 +2,12 @@ package gate
 
 import (
 	"context"
-	"gitee.com/monobytes/gcore/gcluster"
-	"gitee.com/monobytes/gcore/gerrors"
-	"gitee.com/monobytes/gcore/glog"
-	"gitee.com/monobytes/gcore/gmode"
-	"gitee.com/monobytes/gcore/gpacket"
-	"gitee.com/monobytes/gcore/internal/link"
+	"github.com/goodluck0107/gcore/gcluster"
+	"github.com/goodluck0107/gcore/gerrors"
+	"github.com/goodluck0107/gcore/glog"
+	"github.com/goodluck0107/gcore/gmode"
+	"github.com/goodluck0107/gcore/gpacket"
+	"github.com/goodluck0107/gcore/internal/link"
 )
 
 type proxy struct {

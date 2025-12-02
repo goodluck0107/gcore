@@ -2,8 +2,8 @@ package gpacket_test
 
 import (
 	"bytes"
-	"gitee.com/monobytes/gcore/gpacket"
-	"gitee.com/monobytes/gcore/gutils/grand"
+	"github.com/goodluck0107/gcore/gpacket"
+	"github.com/goodluck0107/gcore/gutils/grand"
 	"testing"
 )
 

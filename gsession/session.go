@@ -1,8 +1,8 @@
 package gsession
 
 import (
-	"gitee.com/monobytes/gcore/gerrors"
-	"gitee.com/monobytes/gcore/gnetwork"
+	"github.com/goodluck0107/gcore/gerrors"
+	"github.com/goodluck0107/gcore/gnetwork"
 	"net"
 	"sync"
 )

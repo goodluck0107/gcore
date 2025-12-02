@@ -2,7 +2,7 @@ package gnet
 
 import (
 	"encoding/binary"
-	innernet "gitee.com/monobytes/gcore/gwrap/net"
+	innernet "github.com/goodluck0107/gcore/gwrap/net"
 	"net"
 )
 

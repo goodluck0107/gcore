@@ -2,11 +2,11 @@ package direct
 
 import (
 	"context"
-	"gitee.com/monobytes/gcore/gcluster"
-	"gitee.com/monobytes/gcore/gerrors"
-	"gitee.com/monobytes/gcore/glog"
-	"gitee.com/monobytes/gcore/gregistry"
-	"gitee.com/monobytes/gcore/gwrap/endpoint"
+	"github.com/goodluck0107/gcore/gcluster"
+	"github.com/goodluck0107/gcore/gerrors"
+	"github.com/goodluck0107/gcore/glog"
+	"github.com/goodluck0107/gcore/gregistry"
+	"github.com/goodluck0107/gcore/gwrap/endpoint"
 	cli "github.com/smallnest/rpcx/client"
 	"net"
 	"net/url"

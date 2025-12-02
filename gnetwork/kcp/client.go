@@ -1,7 +1,7 @@
 package kcp
 
 import (
-	"gitee.com/monobytes/gcore/gnetwork"
+	"github.com/goodluck0107/gcore/gnetwork"
 	"github.com/xtaci/kcp-go/v5"
 	"sync/atomic"
 )

@@ -3,9 +3,9 @@ package node_test
 import (
 	"context"
 	"fmt"
-	"gitee.com/monobytes/gcore/gcluster"
-	"gitee.com/monobytes/gcore/glog"
-	"gitee.com/monobytes/gcore/internal/transporter/node"
+	"github.com/goodluck0107/gcore/gcluster"
+	"github.com/goodluck0107/gcore/glog"
+	"github.com/goodluck0107/gcore/internal/transporter/node"
 	"testing"
 	"time"
 )

@@ -1,7 +1,7 @@
 package codes
 
 import (
-	"gitee.com/monobytes/gcore/gerrors"
+	"github.com/goodluck0107/gcore/gerrors"
 )
 
 const (

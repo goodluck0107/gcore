@@ -3,9 +3,9 @@ package etcd
 import (
 	"context"
 	"fmt"
-	"gitee.com/monobytes/gcore/gconfig"
-	"gitee.com/monobytes/gcore/gerrors"
-	"gitee.com/monobytes/gcore/gutils/gconv"
+	"github.com/goodluck0107/gcore/gconfig"
+	"github.com/goodluck0107/gcore/gerrors"
+	"github.com/goodluck0107/gcore/gutils/gconv"
 	"go.etcd.io/etcd/client/v3"
 	"path/filepath"
 	"strings"

@@ -1,8 +1,8 @@
 package ghttp
 
 import (
-	ghandler "gitee.com/monobytes/gcore/gprotocol/handler"
 	"github.com/gofiber/fiber/v3"
+	ghandler "github.com/goodluck0107/gcore/gprotocol/handler"
 )
 
 type Handler = func(ctx Context) error

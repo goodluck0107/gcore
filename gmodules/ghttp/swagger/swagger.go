@@ -1,11 +1,11 @@
 package swagger
 
 import (
-	"gitee.com/monobytes/gcore/glog"
 	"github.com/bytedance/sonic"
 	"github.com/go-openapi/runtime/middleware"
 	"github.com/gofiber/fiber/v3"
 	"github.com/gofiber/fiber/v3/middleware/adaptor"
+	"github.com/goodluck0107/gcore/glog"
 	"net/http"
 	"os"
 	"path"

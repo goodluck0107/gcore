@@ -2,8 +2,8 @@ package etcd
 
 import (
 	"context"
-	"gitee.com/monobytes/gcore/glog"
-	"gitee.com/monobytes/gcore/gregistry"
+	"github.com/goodluck0107/gcore/glog"
+	"github.com/goodluck0107/gcore/gregistry"
 	"go.etcd.io/etcd/api/v3/mvccpb"
 	clientv3 "go.etcd.io/etcd/client/v3"
 	"strings"

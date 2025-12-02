@@ -1,7 +1,7 @@
 package glog_test
 
 import (
-	"gitee.com/monobytes/gcore/glog"
+	"github.com/goodluck0107/gcore/glog"
 	"testing"
 )
 

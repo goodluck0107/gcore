@@ -1,10 +1,10 @@
 package rpcx
 
 import (
-	"gitee.com/monobytes/gcore/getc"
-	"gitee.com/monobytes/gcore/gregistry"
-	"gitee.com/monobytes/gcore/gtransport/rpcx/internal/client"
-	"gitee.com/monobytes/gcore/gtransport/rpcx/internal/server"
+	"github.com/goodluck0107/gcore/getc"
+	"github.com/goodluck0107/gcore/gregistry"
+	"github.com/goodluck0107/gcore/gtransport/rpcx/internal/client"
+	"github.com/goodluck0107/gcore/gtransport/rpcx/internal/server"
 )
 
 const (

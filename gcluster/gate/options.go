@@ -2,13 +2,13 @@ package gate
 
 import (
 	"context"
-	"gitee.com/monobytes/gcore/getc"
-	"gitee.com/monobytes/gcore/glocate"
-	"gitee.com/monobytes/gcore/gutils/guuid"
+	"github.com/goodluck0107/gcore/getc"
+	"github.com/goodluck0107/gcore/glocate"
+	"github.com/goodluck0107/gcore/gutils/guuid"
 	"time"
 
-	"gitee.com/monobytes/gcore/gnetwork"
-	"gitee.com/monobytes/gcore/gregistry"
+	"github.com/goodluck0107/gcore/gnetwork"
+	"github.com/goodluck0107/gcore/gregistry"
 )
 
 const (

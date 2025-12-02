@@ -1,12 +1,12 @@
 package client
 
 import (
-	"gitee.com/monobytes/gcore/gerrors"
-	"gitee.com/monobytes/gcore/glog"
-	"gitee.com/monobytes/gcore/gutils/gtime"
-	"gitee.com/monobytes/gcore/gwrap/buffer"
-	"gitee.com/monobytes/gcore/internal/transporter/internal/def"
-	"gitee.com/monobytes/gcore/internal/transporter/internal/protocol"
+	"github.com/goodluck0107/gcore/gerrors"
+	"github.com/goodluck0107/gcore/glog"
+	"github.com/goodluck0107/gcore/gutils/gtime"
+	"github.com/goodluck0107/gcore/gwrap/buffer"
+	"github.com/goodluck0107/gcore/internal/transporter/internal/def"
+	"github.com/goodluck0107/gcore/internal/transporter/internal/protocol"
 	"net"
 	"sync/atomic"
 	"time"

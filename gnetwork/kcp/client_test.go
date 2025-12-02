@@ -2,11 +2,11 @@ package kcp_test
 
 import (
 	"fmt"
-	"gitee.com/monobytes/gcore/glog"
-	"gitee.com/monobytes/gcore/gnetwork"
-	"gitee.com/monobytes/gcore/gnetwork/kcp"
-	"gitee.com/monobytes/gcore/gpacket"
-	"gitee.com/monobytes/gcore/gutils/grand"
+	"github.com/goodluck0107/gcore/glog"
+	"github.com/goodluck0107/gcore/gnetwork"
+	"github.com/goodluck0107/gcore/gnetwork/kcp"
+	"github.com/goodluck0107/gcore/gpacket"
+	"github.com/goodluck0107/gcore/gutils/grand"
 	"net/http"
 	"sync"
 	"sync/atomic"

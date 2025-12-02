@@ -3,9 +3,9 @@ package redis_test
 import (
 	"context"
 	"fmt"
-	"gitee.com/monobytes/gcore/gcluster"
-	"gitee.com/monobytes/gcore/glocate/redis/v2"
-	"gitee.com/monobytes/gcore/gutils/guuid"
+	"github.com/goodluck0107/gcore/gcluster"
+	"github.com/goodluck0107/gcore/glocate/redis"
+	"github.com/goodluck0107/gcore/gutils/guuid"
 	"testing"
 	"time"
 )

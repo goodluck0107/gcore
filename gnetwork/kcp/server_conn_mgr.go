@@ -1,8 +1,8 @@
 package kcp
 
 import (
-	"gitee.com/monobytes/gcore/gerrors"
-	"gitee.com/monobytes/gcore/gutils/gcall"
+	"github.com/goodluck0107/gcore/gerrors"
+	"github.com/goodluck0107/gcore/gutils/gcall"
 	"github.com/xtaci/kcp-go/v5"
 	"reflect"
 	"sync"

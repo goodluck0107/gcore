@@ -2,8 +2,8 @@ package redis
 
 import (
 	"context"
-	"gitee.com/monobytes/gcore/getc"
 	"github.com/go-redis/redis/v8"
+	"github.com/goodluck0107/gcore/getc"
 )
 
 const (

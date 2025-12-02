@@ -2,10 +2,10 @@ package ghttp
 
 import (
 	"fmt"
-	"gitee.com/monobytes/gcore/gcodes"
-	"gitee.com/monobytes/gcore/glog"
-	ghandler "gitee.com/monobytes/gcore/gprotocol/handler"
 	"github.com/gofiber/fiber/v3"
+	"github.com/goodluck0107/gcore/gcodes"
+	"github.com/goodluck0107/gcore/glog"
+	ghandler "github.com/goodluck0107/gcore/gprotocol/handler"
 )
 
 const (

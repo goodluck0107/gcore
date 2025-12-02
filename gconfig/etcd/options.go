@@ -1,8 +1,8 @@
 package etcd
 
 import (
-	"gitee.com/monobytes/gcore/gconfig"
-	"gitee.com/monobytes/gcore/getc"
+	"github.com/goodluck0107/gcore/gconfig"
+	"github.com/goodluck0107/gcore/getc"
 	"go.etcd.io/etcd/client/v3"
 	"time"
 )

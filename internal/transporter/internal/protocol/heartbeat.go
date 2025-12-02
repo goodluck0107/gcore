@@ -2,7 +2,7 @@ package protocol
 
 import (
 	"encoding/binary"
-	"gitee.com/monobytes/gcore/gwrap/buffer"
+	"github.com/goodluck0107/gcore/gwrap/buffer"
 )
 
 var heartbeat []byte

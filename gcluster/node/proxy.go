@@ -2,12 +2,12 @@ package node
 
 import (
 	"context"
-	"gitee.com/monobytes/gcore/gcluster"
-	"gitee.com/monobytes/gcore/gerrors"
-	"gitee.com/monobytes/gcore/gregistry"
-	"gitee.com/monobytes/gcore/gsession"
-	"gitee.com/monobytes/gcore/gtransport"
-	"gitee.com/monobytes/gcore/internal/link"
+	"github.com/goodluck0107/gcore/gcluster"
+	"github.com/goodluck0107/gcore/gerrors"
+	"github.com/goodluck0107/gcore/gregistry"
+	"github.com/goodluck0107/gcore/gsession"
+	"github.com/goodluck0107/gcore/gtransport"
+	"github.com/goodluck0107/gcore/internal/link"
 	"time"
 )
 

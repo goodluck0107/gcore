@@ -3,8 +3,8 @@ package etcd
 import (
 	"context"
 	"fmt"
-	"gitee.com/monobytes/gcore/gencoding/json"
-	"gitee.com/monobytes/gcore/gregistry"
+	"github.com/goodluck0107/gcore/gencoding/json"
+	"github.com/goodluck0107/gcore/gregistry"
 	"go.etcd.io/etcd/client/v3"
 	"sync"
 )

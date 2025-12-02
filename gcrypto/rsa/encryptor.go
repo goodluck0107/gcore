@@ -3,7 +3,7 @@ package rsa
 import (
 	"crypto/rand"
 	"crypto/rsa"
-	"gitee.com/monobytes/gcore/gerrors"
+	"github.com/goodluck0107/gcore/gerrors"
 	"math"
 )
 

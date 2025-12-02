@@ -1,7 +1,7 @@
 package jwt_test
 
 import (
-	"gitee.com/monobytes/gcore/gauth/jwt"
+	"github.com/goodluck0107/gcore/gauth/jwt"
 	"net/http"
 	"testing"
 	"time"

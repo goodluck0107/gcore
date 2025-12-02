@@ -2,7 +2,7 @@ package info
 
 import (
 	"fmt"
-	"gitee.com/monobytes/gcore/gmode"
+	"github.com/goodluck0107/gcore/gmode"
 	"strings"
 	"syscall"
 	"unicode/utf8"
@@ -23,7 +23,7 @@ const (
 	rightTopBorder    = "┐"
 	leftBottomBorder  = "└"
 	rightBottomBorder = "┘"
-	website           = "https://gitee.com/monobytes/gcore"
+	website           = "https://github.com/goodluck0107/gcore"
 	version           = "v0.0.1"
 	global            = "Global"
 )

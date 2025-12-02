@@ -1,12 +1,12 @@
 package link
 
 import (
-	"gitee.com/monobytes/gcore/gcluster"
-	"gitee.com/monobytes/gcore/gcrypto"
-	"gitee.com/monobytes/gcore/gencoding"
-	"gitee.com/monobytes/gcore/glocate"
-	"gitee.com/monobytes/gcore/gregistry"
-	"gitee.com/monobytes/gcore/internal/dispatcher"
+	"github.com/goodluck0107/gcore/gcluster"
+	"github.com/goodluck0107/gcore/gcrypto"
+	"github.com/goodluck0107/gcore/gencoding"
+	"github.com/goodluck0107/gcore/glocate"
+	"github.com/goodluck0107/gcore/gregistry"
+	"github.com/goodluck0107/gcore/internal/dispatcher"
 )
 
 type Options struct {

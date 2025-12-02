@@ -2,11 +2,11 @@ package protocol
 
 import (
 	"encoding/binary"
-	"gitee.com/monobytes/gcore/gerrors"
-	"gitee.com/monobytes/gcore/gsession"
-	"gitee.com/monobytes/gcore/gwrap/buffer"
-	"gitee.com/monobytes/gcore/internal/transporter/internal/codes"
-	"gitee.com/monobytes/gcore/internal/transporter/internal/route"
+	"github.com/goodluck0107/gcore/gerrors"
+	"github.com/goodluck0107/gcore/gsession"
+	"github.com/goodluck0107/gcore/gwrap/buffer"
+	"github.com/goodluck0107/gcore/internal/transporter/internal/codes"
+	"github.com/goodluck0107/gcore/internal/transporter/internal/route"
 	"io"
 )
 

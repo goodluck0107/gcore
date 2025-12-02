@@ -2,8 +2,8 @@ package nacos_test
 
 import (
 	"context"
-	"gitee.com/monobytes/gcore/gconfig"
-	"gitee.com/monobytes/gcore/gconfig/nacos"
+	"github.com/goodluck0107/gcore/gconfig"
+	"github.com/goodluck0107/gcore/gconfig/nacos"
 	"testing"
 	"time"
 )

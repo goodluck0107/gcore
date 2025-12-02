@@ -1,8 +1,8 @@
 package ghttp
 
 import (
-	"gitee.com/monobytes/gcore/gerrors"
-	"gitee.com/monobytes/gcore/gtransport"
+	"github.com/goodluck0107/gcore/gerrors"
+	"github.com/goodluck0107/gcore/gtransport"
 )
 
 type Proxy struct {

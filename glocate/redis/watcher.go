@@ -3,9 +3,9 @@ package redis
 import (
 	"context"
 	"fmt"
-	"gitee.com/monobytes/gcore/glocate"
-	"gitee.com/monobytes/gcore/glog"
 	"github.com/go-redis/redis/v8"
+	"github.com/goodluck0107/gcore/glocate"
+	"github.com/goodluck0107/gcore/glog"
 	"sync"
 	"sync/atomic"
 )

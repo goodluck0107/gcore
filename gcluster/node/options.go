@@ -2,13 +2,13 @@ package node
 
 import (
 	"context"
-	"gitee.com/monobytes/gcore/gcrypto"
-	"gitee.com/monobytes/gcore/gencoding"
-	"gitee.com/monobytes/gcore/getc"
-	"gitee.com/monobytes/gcore/glocate"
-	"gitee.com/monobytes/gcore/gregistry"
-	"gitee.com/monobytes/gcore/gtransport"
-	"gitee.com/monobytes/gcore/gutils/guuid"
+	"github.com/goodluck0107/gcore/gcrypto"
+	"github.com/goodluck0107/gcore/gencoding"
+	"github.com/goodluck0107/gcore/getc"
+	"github.com/goodluck0107/gcore/glocate"
+	"github.com/goodluck0107/gcore/gregistry"
+	"github.com/goodluck0107/gcore/gtransport"
+	"github.com/goodluck0107/gcore/gutils/guuid"
 	"time"
 )
 

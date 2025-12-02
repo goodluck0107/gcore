@@ -1,8 +1,8 @@
 package value
 
 import (
-	"gitee.com/monobytes/gcore/gencoding/json"
-	"gitee.com/monobytes/gcore/gutils/gconv"
+	"github.com/goodluck0107/gcore/gencoding/json"
+	"github.com/goodluck0107/gcore/gutils/gconv"
 	"time"
 )
 

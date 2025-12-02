@@ -2,8 +2,8 @@ package interfaces
 
 import (
 	"errors"
-	"gitee.com/monobytes/gcore/glog"
-	"gitee.com/monobytes/gcore/gtransport"
+	"github.com/goodluck0107/gcore/glog"
+	"github.com/goodluck0107/gcore/gtransport"
 )
 
 var (

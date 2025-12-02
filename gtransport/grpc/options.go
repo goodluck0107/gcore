@@ -1,10 +1,10 @@
 package grpc
 
 import (
-	"gitee.com/monobytes/gcore/getc"
-	"gitee.com/monobytes/gcore/gregistry"
-	"gitee.com/monobytes/gcore/gtransport/grpc/internal/client"
-	"gitee.com/monobytes/gcore/gtransport/grpc/internal/server"
+	"github.com/goodluck0107/gcore/getc"
+	"github.com/goodluck0107/gcore/gregistry"
+	"github.com/goodluck0107/gcore/gtransport/grpc/internal/client"
+	"github.com/goodluck0107/gcore/gtransport/grpc/internal/server"
 	"google.golang.org/grpc"
 )
 

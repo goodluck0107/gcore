@@ -1,10 +1,10 @@
 package protocol_test
 
 import (
-	"gitee.com/monobytes/gcore/gcluster"
-	"gitee.com/monobytes/gcore/gutils/guuid"
-	"gitee.com/monobytes/gcore/internal/transporter/internal/codes"
-	"gitee.com/monobytes/gcore/internal/transporter/internal/protocol"
+	"github.com/goodluck0107/gcore/gcluster"
+	"github.com/goodluck0107/gcore/gutils/guuid"
+	"github.com/goodluck0107/gcore/internal/transporter/internal/codes"
+	"github.com/goodluck0107/gcore/internal/transporter/internal/protocol"
 	"testing"
 )
 

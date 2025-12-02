@@ -2,8 +2,8 @@ package glog
 
 import (
 	"fmt"
-	"gitee.com/monobytes/gcore/gutils/gtime"
-	stacks "gitee.com/monobytes/gcore/gwrap/stack"
+	"github.com/goodluck0107/gcore/gutils/gtime"
+	stacks "github.com/goodluck0107/gcore/gwrap/stack"
 	"path/filepath"
 	"runtime"
 	"strings"

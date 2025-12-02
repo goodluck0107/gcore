@@ -1,6 +1,6 @@
 package gpacket
 
-import "gitee.com/monobytes/gcore/gwrap/buffer"
+import "github.com/goodluck0107/gcore/gwrap/buffer"
 
 var globalPacker Packer
 

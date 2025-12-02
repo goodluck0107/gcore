@@ -2,9 +2,9 @@ package core
 
 import (
 	"context"
-	"gitee.com/monobytes/gcore/gconfig"
-	"gitee.com/monobytes/gcore/gerrors"
-	"gitee.com/monobytes/gcore/gutils/gfile"
+	"github.com/goodluck0107/gcore/gconfig"
+	"github.com/goodluck0107/gcore/gerrors"
+	"github.com/goodluck0107/gcore/gutils/gfile"
 	"io"
 	"io/fs"
 	"os"

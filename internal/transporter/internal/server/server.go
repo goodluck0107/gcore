@@ -1,12 +1,12 @@
 package server
 
 import (
-	"gitee.com/monobytes/gcore/glog"
-	"gitee.com/monobytes/gcore/gwrap/endpoint"
-	xnet "gitee.com/monobytes/gcore/gwrap/net"
-	"gitee.com/monobytes/gcore/internal/transporter/internal/codes"
-	"gitee.com/monobytes/gcore/internal/transporter/internal/protocol"
-	"gitee.com/monobytes/gcore/internal/transporter/internal/route"
+	"github.com/goodluck0107/gcore/glog"
+	"github.com/goodluck0107/gcore/gwrap/endpoint"
+	xnet "github.com/goodluck0107/gcore/gwrap/net"
+	"github.com/goodluck0107/gcore/internal/transporter/internal/codes"
+	"github.com/goodluck0107/gcore/internal/transporter/internal/protocol"
+	"github.com/goodluck0107/gcore/internal/transporter/internal/route"
 	"net"
 	"sync"
 	"time"

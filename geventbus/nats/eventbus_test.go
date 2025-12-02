@@ -2,8 +2,8 @@ package nats_test
 
 import (
 	"context"
-	"gitee.com/monobytes/gcore/geventbus"
-	"gitee.com/monobytes/gcore/geventbus/nats"
+	"github.com/goodluck0107/gcore/geventbus"
+	"github.com/goodluck0107/gcore/geventbus/nats"
 	"log"
 	"testing"
 	"time"

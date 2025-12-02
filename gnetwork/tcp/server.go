@@ -1,8 +1,8 @@
 package tcp
 
 import (
-	"gitee.com/monobytes/gcore/glog"
-	"gitee.com/monobytes/gcore/gnetwork"
+	"github.com/goodluck0107/gcore/glog"
+	"github.com/goodluck0107/gcore/gnetwork"
 	"net"
 	"time"
 )

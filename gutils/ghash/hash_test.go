@@ -1,7 +1,7 @@
 package ghash_test
 
 import (
-	"gitee.com/monobytes/gcore/gutils/ghash"
+	"github.com/goodluck0107/gcore/gutils/ghash"
 	"testing"
 )
 

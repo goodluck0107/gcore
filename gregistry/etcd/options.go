@@ -2,7 +2,7 @@ package etcd
 
 import (
 	"context"
-	"gitee.com/monobytes/gcore/getc"
+	"github.com/goodluck0107/gcore/getc"
 	clientv3 "go.etcd.io/etcd/client/v3"
 	"time"
 )

@@ -1,11 +1,11 @@
 package logrus
 
 import (
-	"gitee.com/monobytes/gcore/glog"
-	"gitee.com/monobytes/gcore/glog/logrus/internal/define"
-	"gitee.com/monobytes/gcore/glog/logrus/internal/formatter"
-	"gitee.com/monobytes/gcore/glog/logrus/internal/hook"
-	"gitee.com/monobytes/gcore/gmode"
+	"github.com/goodluck0107/gcore/glog"
+	"github.com/goodluck0107/gcore/glog/logrus/internal/define"
+	"github.com/goodluck0107/gcore/glog/logrus/internal/formatter"
+	"github.com/goodluck0107/gcore/glog/logrus/internal/hook"
+	"github.com/goodluck0107/gcore/gmode"
 	"github.com/sirupsen/logrus"
 	"io"
 	"os"

@@ -1,7 +1,7 @@
 package ghttp
 
 import (
-	"gitee.com/monobytes/gcore/examples/protocol/pb"
+	"github.com/goodluck0107/gcore/examples/protocol/pb"
 	"testing"
 )
 

@@ -1,7 +1,7 @@
 package gflag_test
 
 import (
-	"gitee.com/monobytes/gcore/gflag"
+	"github.com/goodluck0107/gcore/gflag"
 	"testing"
 )
 

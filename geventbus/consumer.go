@@ -1,7 +1,7 @@
 package geventbus
 
 import (
-	"gitee.com/monobytes/gcore/gtask"
+	"github.com/goodluck0107/gcore/gtask"
 	"reflect"
 	"sync"
 )

@@ -1,9 +1,9 @@
 package ws
 
 import (
-	"gitee.com/monobytes/gcore/glog"
-	"gitee.com/monobytes/gcore/gnetwork"
-	"gitee.com/monobytes/gcore/gutils/gcall"
+	"github.com/goodluck0107/gcore/glog"
+	"github.com/goodluck0107/gcore/gnetwork"
+	"github.com/goodluck0107/gcore/gutils/gcall"
 	"github.com/gorilla/websocket"
 	"net"
 	"net/http"

@@ -2,8 +2,8 @@ package file_test
 
 import (
 	"context"
-	"gitee.com/monobytes/gcore/gconfig"
-	"gitee.com/monobytes/gcore/gconfig/file"
+	"github.com/goodluck0107/gcore/gconfig"
+	"github.com/goodluck0107/gcore/gconfig/file"
 	"testing"
 	"time"
 )

@@ -1,7 +1,7 @@
 package protocol_test
 
 import (
-	"gitee.com/monobytes/gcore/internal/transporter/internal/protocol"
+	"github.com/goodluck0107/gcore/internal/transporter/internal/protocol"
 	"testing"
 )
 

@@ -2,7 +2,7 @@ package client
 
 import (
 	"context"
-	"gitee.com/monobytes/gcore/gpacket"
+	"github.com/goodluck0107/gcore/gpacket"
 )
 
 type Context struct {

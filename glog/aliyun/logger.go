@@ -3,9 +3,9 @@ package aliyun
 import (
 	"bytes"
 	"fmt"
-	"gitee.com/monobytes/gcore/glog"
-	"gitee.com/monobytes/gcore/gutils/gtime"
 	"github.com/aliyun/aliyun-log-go-sdk/producer"
+	"github.com/goodluck0107/gcore/glog"
+	"github.com/goodluck0107/gcore/gutils/gtime"
 	"os"
 	"sync"
 )

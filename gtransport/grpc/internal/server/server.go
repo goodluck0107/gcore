@@ -2,8 +2,8 @@ package server
 
 import (
 	"errors"
-	"gitee.com/monobytes/gcore/gwrap/endpoint"
-	xnet "gitee.com/monobytes/gcore/gwrap/net"
+	"github.com/goodluck0107/gcore/gwrap/endpoint"
+	xnet "github.com/goodluck0107/gcore/gwrap/net"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials"
 	"net"

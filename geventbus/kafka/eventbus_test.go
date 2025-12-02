@@ -2,8 +2,8 @@ package kafka_test
 
 import (
 	"context"
-	"gitee.com/monobytes/gcore/geventbus"
-	"gitee.com/monobytes/gcore/geventbus/kafka"
+	"github.com/goodluck0107/gcore/geventbus"
+	"github.com/goodluck0107/gcore/geventbus/kafka"
 	"log"
 	"testing"
 	"time"

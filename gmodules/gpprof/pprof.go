@@ -2,10 +2,10 @@ package gpprof
 
 import (
 	"fmt"
-	"gitee.com/monobytes/gcore/glog"
-	"gitee.com/monobytes/gcore/gmodules"
-	"gitee.com/monobytes/gcore/gwrap/info"
-	xnet "gitee.com/monobytes/gcore/gwrap/net"
+	"github.com/goodluck0107/gcore/glog"
+	"github.com/goodluck0107/gcore/gmodules"
+	"github.com/goodluck0107/gcore/gwrap/info"
+	xnet "github.com/goodluck0107/gcore/gwrap/net"
 	"net/http"
 	_ "net/http/pprof"
 )

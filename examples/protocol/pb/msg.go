@@ -3,7 +3,7 @@
 package pb
 
 import (
-	"gitee.com/monobytes/gcore/gprotocol/interfaces"
+	"github.com/goodluck0107/gcore/gprotocol/interfaces"
 	"google.golang.org/protobuf/proto"
 )
 

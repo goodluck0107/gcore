@@ -1,7 +1,7 @@
 package gcluster
 
 import (
-	"gitee.com/monobytes/gcore/gsession"
+	"github.com/goodluck0107/gcore/gsession"
 )
 
 const (

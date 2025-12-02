@@ -2,8 +2,8 @@ package consul
 
 import (
 	"context"
-	"gitee.com/monobytes/gcore/gconfig"
-	"gitee.com/monobytes/gcore/getc"
+	"github.com/goodluck0107/gcore/gconfig"
+	"github.com/goodluck0107/gcore/getc"
 	"github.com/hashicorp/consul/api"
 )
 

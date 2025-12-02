@@ -2,7 +2,7 @@ package rsa_test
 
 import (
 	"fmt"
-	"gitee.com/monobytes/gcore/gcrypto/rsa"
+	"github.com/goodluck0107/gcore/gcrypto/rsa"
 	"testing"
 )
 

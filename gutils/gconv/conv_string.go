@@ -2,7 +2,7 @@ package gconv
 
 import (
 	"fmt"
-	"gitee.com/monobytes/gcore/gencoding/json"
+	"github.com/goodluck0107/gcore/gencoding/json"
 	"reflect"
 	"strconv"
 	"time"

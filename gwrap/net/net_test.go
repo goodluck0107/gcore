@@ -1,7 +1,7 @@
 package net_test
 
 import (
-	"gitee.com/monobytes/gcore/gwrap/net"
+	"github.com/goodluck0107/gcore/gwrap/net"
 	"testing"
 )
 

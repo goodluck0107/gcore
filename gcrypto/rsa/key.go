@@ -10,9 +10,9 @@ import (
 	"os"
 	"path"
 
-	"gitee.com/monobytes/gcore/gerrors"
-	"gitee.com/monobytes/gcore/gutils/gconv"
-	"gitee.com/monobytes/gcore/gutils/gpath"
+	"github.com/goodluck0107/gcore/gerrors"
+	"github.com/goodluck0107/gcore/gutils/gconv"
+	"github.com/goodluck0107/gcore/gutils/gpath"
 )
 
 type Format int

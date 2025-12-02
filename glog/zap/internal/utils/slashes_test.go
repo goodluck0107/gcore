@@ -1,7 +1,7 @@
 package utils_test
 
 import (
-	"gitee.com/monobytes/gcore/glog/zap/internal/utils"
+	"github.com/goodluck0107/gcore/glog/zap/internal/utils"
 	"testing"
 )
 

@@ -1,7 +1,7 @@
 package link
 
 import (
-	"gitee.com/monobytes/gcore/gcluster"
+	"github.com/goodluck0107/gcore/gcluster"
 )
 
 type (

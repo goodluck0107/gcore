@@ -2,7 +2,7 @@ package geventbus_test
 
 import (
 	"context"
-	"gitee.com/monobytes/gcore/geventbus"
+	"github.com/goodluck0107/gcore/geventbus"
 	"log"
 	"testing"
 	"time"

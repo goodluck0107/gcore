@@ -1,13 +1,13 @@
 package tcp
 
 import (
-	"gitee.com/monobytes/gcore/gerrors"
-	"gitee.com/monobytes/gcore/glog"
-	"gitee.com/monobytes/gcore/gnetwork"
-	"gitee.com/monobytes/gcore/gpacket"
-	"gitee.com/monobytes/gcore/gutils/gcall"
-	"gitee.com/monobytes/gcore/gutils/gnet"
-	"gitee.com/monobytes/gcore/gutils/gtime"
+	"github.com/goodluck0107/gcore/gerrors"
+	"github.com/goodluck0107/gcore/glog"
+	"github.com/goodluck0107/gcore/gnetwork"
+	"github.com/goodluck0107/gcore/gpacket"
+	"github.com/goodluck0107/gcore/gutils/gcall"
+	"github.com/goodluck0107/gcore/gutils/gnet"
+	"github.com/goodluck0107/gcore/gutils/gtime"
 	"net"
 	"sync"
 	"sync/atomic"

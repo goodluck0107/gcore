@@ -1,8 +1,8 @@
 package gconv_test
 
 import (
-	"gitee.com/monobytes/gcore/gutils/gconv"
-	"gitee.com/monobytes/gcore/gutils/gtime"
+	"github.com/goodluck0107/gcore/gutils/gconv"
+	"github.com/goodluck0107/gcore/gutils/gtime"
 	"math"
 	"math/cmplx"
 	"testing"

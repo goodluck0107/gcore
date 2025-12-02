@@ -2,10 +2,10 @@ package geventbus
 
 import (
 	"context"
-	"gitee.com/monobytes/gcore/glog"
-	"gitee.com/monobytes/gcore/gutils/gtime"
-	"gitee.com/monobytes/gcore/gutils/guuid"
-	"gitee.com/monobytes/gcore/gwrap/value"
+	"github.com/goodluck0107/gcore/glog"
+	"github.com/goodluck0107/gcore/gutils/gtime"
+	"github.com/goodluck0107/gcore/gutils/guuid"
+	"github.com/goodluck0107/gcore/gwrap/value"
 	"sync"
 	"time"
 )

@@ -1,9 +1,9 @@
 package dispatcher
 
 import (
-	"gitee.com/monobytes/gcore/gcluster"
-	"gitee.com/monobytes/gcore/gerrors"
-	"gitee.com/monobytes/gcore/gwrap/endpoint"
+	"github.com/goodluck0107/gcore/gcluster"
+	"github.com/goodluck0107/gcore/gerrors"
+	"github.com/goodluck0107/gcore/gwrap/endpoint"
 	"math/rand/v2"
 	"sync"
 	"sync/atomic"

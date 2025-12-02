@@ -1,11 +1,11 @@
 package getc
 
 import (
-	"gitee.com/monobytes/gcore/gconfig"
-	"gitee.com/monobytes/gcore/gconfig/file/core"
-	"gitee.com/monobytes/gcore/genv"
-	"gitee.com/monobytes/gcore/gflag"
-	"gitee.com/monobytes/gcore/gwrap/value"
+	"github.com/goodluck0107/gcore/gconfig"
+	"github.com/goodluck0107/gcore/gconfig/file/core"
+	"github.com/goodluck0107/gcore/genv"
+	"github.com/goodluck0107/gcore/gflag"
+	"github.com/goodluck0107/gcore/gwrap/value"
 )
 
 // etc主要被当做项目启动配置存在；常用于集群配置、服务组件配置等。

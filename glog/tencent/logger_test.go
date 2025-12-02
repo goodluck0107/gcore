@@ -1,7 +1,7 @@
 package tencent_test
 
 import (
-	"gitee.com/monobytes/gcore/glog/tencent"
+	"github.com/goodluck0107/gcore/glog/tencent"
 	"testing"
 )
 

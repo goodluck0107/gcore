@@ -2,12 +2,12 @@ package redis
 
 import (
 	"context"
-	"gitee.com/monobytes/gcore/gerrors"
-	"gitee.com/monobytes/gcore/gkvdb"
-	"gitee.com/monobytes/gcore/gutils/gconv"
-	"gitee.com/monobytes/gcore/gutils/grand"
-	"gitee.com/monobytes/gcore/gutils/greflect"
 	"github.com/go-redis/redis/v8"
+	"github.com/goodluck0107/gcore/gerrors"
+	"github.com/goodluck0107/gcore/gkvdb"
+	"github.com/goodluck0107/gcore/gutils/gconv"
+	"github.com/goodluck0107/gcore/gutils/grand"
+	"github.com/goodluck0107/gcore/gutils/greflect"
 	"golang.org/x/sync/singleflight"
 	"time"
 )

@@ -2,7 +2,7 @@ package genmsg
 
 import (
 	"fmt"
-	"gitee.com/monobytes/gcore/gplugin/protoc-gen-idmsg/pb"
+	"github.com/goodluck0107/gcore/gplugin/protoc-gen-idmsg/pb"
 	options "google.golang.org/genproto/googleapis/api/annotations"
 	"google.golang.org/protobuf/compiler/protogen"
 	"google.golang.org/protobuf/reflect/protoreflect"

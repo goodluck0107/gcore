@@ -4,8 +4,8 @@ import (
 	"bytes"
 	"encoding/binary"
 	"fmt"
-	"gitee.com/monobytes/gcore/gutils/grand"
-	"gitee.com/monobytes/gcore/gwrap/buffer"
+	"github.com/goodluck0107/gcore/gutils/grand"
+	"github.com/goodluck0107/gcore/gwrap/buffer"
 	"testing"
 )
 

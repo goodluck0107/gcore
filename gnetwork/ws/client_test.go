@@ -2,10 +2,10 @@ package ws_test
 
 import (
 	"fmt"
-	"gitee.com/monobytes/gcore/glog"
-	"gitee.com/monobytes/gcore/gnetwork"
-	"gitee.com/monobytes/gcore/gnetwork/ws"
-	"gitee.com/monobytes/gcore/gpacket"
+	"github.com/goodluck0107/gcore/glog"
+	"github.com/goodluck0107/gcore/gnetwork"
+	"github.com/goodluck0107/gcore/gnetwork/ws"
+	"github.com/goodluck0107/gcore/gpacket"
 	"sync"
 	"sync/atomic"
 	"testing"

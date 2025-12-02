@@ -1,9 +1,9 @@
 package file
 
 import (
-	"gitee.com/monobytes/gcore/gconfig"
-	"gitee.com/monobytes/gcore/gconfig/file/core"
-	"gitee.com/monobytes/gcore/glog"
+	"github.com/goodluck0107/gcore/gconfig"
+	"github.com/goodluck0107/gcore/gconfig/file/core"
+	"github.com/goodluck0107/gcore/glog"
 )
 
 const Name = core.Name

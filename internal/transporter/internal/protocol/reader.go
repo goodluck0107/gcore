@@ -2,7 +2,7 @@ package protocol
 
 import (
 	"encoding/binary"
-	"gitee.com/monobytes/gcore/gerrors"
+	"github.com/goodluck0107/gcore/gerrors"
 	"io"
 	"sync"
 )

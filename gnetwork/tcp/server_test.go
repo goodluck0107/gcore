@@ -1,10 +1,10 @@
 package tcp_test
 
 import (
-	"gitee.com/monobytes/gcore/glog"
-	"gitee.com/monobytes/gcore/gnetwork"
-	"gitee.com/monobytes/gcore/gnetwork/tcp"
-	"gitee.com/monobytes/gcore/gpacket"
+	"github.com/goodluck0107/gcore/glog"
+	"github.com/goodluck0107/gcore/gnetwork"
+	"github.com/goodluck0107/gcore/gnetwork/tcp"
+	"github.com/goodluck0107/gcore/gpacket"
 	"net/http"
 	_ "net/http/pprof"
 	"testing"

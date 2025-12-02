@@ -2,7 +2,7 @@ package chains_test
 
 import (
 	"fmt"
-	"gitee.com/monobytes/gcore/gwrap/chains"
+	"github.com/goodluck0107/gcore/gwrap/chains"
 	"testing"
 )
 

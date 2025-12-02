@@ -2,8 +2,8 @@ package gflag
 
 import (
 	"fmt"
-	"gitee.com/monobytes/gcore/gerrors"
-	"gitee.com/monobytes/gcore/gutils/gconv"
+	"github.com/goodluck0107/gcore/gerrors"
+	"github.com/goodluck0107/gcore/gutils/gconv"
 	"log"
 	"os"
 	"time"

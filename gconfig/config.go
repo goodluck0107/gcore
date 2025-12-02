@@ -2,7 +2,7 @@ package gconfig
 
 import (
 	"context"
-	"gitee.com/monobytes/gcore/gwrap/value"
+	"github.com/goodluck0107/gcore/gwrap/value"
 )
 
 var globalConfigurator Configurator

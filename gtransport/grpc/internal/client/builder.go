@@ -1,9 +1,9 @@
 package client
 
 import (
-	"gitee.com/monobytes/gcore/gregistry"
-	"gitee.com/monobytes/gcore/gtransport/grpc/internal/resolver/direct"
-	"gitee.com/monobytes/gcore/gtransport/grpc/internal/resolver/discovery"
+	"github.com/goodluck0107/gcore/gregistry"
+	"github.com/goodluck0107/gcore/gtransport/grpc/internal/resolver/direct"
+	"github.com/goodluck0107/gcore/gtransport/grpc/internal/resolver/discovery"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials"
 	"google.golang.org/grpc/credentials/insecure"

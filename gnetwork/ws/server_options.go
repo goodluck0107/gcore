@@ -1,7 +1,7 @@
 package ws
 
 import (
-	"gitee.com/monobytes/gcore/getc"
+	"github.com/goodluck0107/gcore/getc"
 	"net/http"
 	"time"
 )

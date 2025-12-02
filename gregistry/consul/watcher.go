@@ -2,7 +2,7 @@ package consul
 
 import (
 	"context"
-	"gitee.com/monobytes/gcore/gregistry"
+	"github.com/goodluck0107/gcore/gregistry"
 	"sync"
 	"sync/atomic"
 	"time"

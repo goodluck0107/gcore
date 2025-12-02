@@ -2,8 +2,8 @@ package core
 
 import (
 	"context"
-	"gitee.com/monobytes/gcore/gconfig"
 	"github.com/fsnotify/fsnotify"
+	"github.com/goodluck0107/gcore/gconfig"
 	"io/fs"
 	"os"
 	"path/filepath"

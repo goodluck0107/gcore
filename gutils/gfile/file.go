@@ -1,7 +1,7 @@
 package gfile
 
 import (
-	"gitee.com/monobytes/gcore/gutils/gpath"
+	"github.com/goodluck0107/gcore/gutils/gpath"
 	"io/fs"
 	"os"
 	"path/filepath"

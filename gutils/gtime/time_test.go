@@ -1,7 +1,7 @@
 package gtime_test
 
 import (
-	"gitee.com/monobytes/gcore/gutils/gtime"
+	"github.com/goodluck0107/gcore/gutils/gtime"
 	"testing"
 )
 

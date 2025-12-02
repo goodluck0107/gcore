@@ -1,10 +1,10 @@
 package kcp_test
 
 import (
-	"gitee.com/monobytes/gcore/glog"
-	"gitee.com/monobytes/gcore/gnetwork"
-	"gitee.com/monobytes/gcore/gnetwork/kcp"
-	"gitee.com/monobytes/gcore/gpacket"
+	"github.com/goodluck0107/gcore/glog"
+	"github.com/goodluck0107/gcore/gnetwork"
+	"github.com/goodluck0107/gcore/gnetwork/kcp"
+	"github.com/goodluck0107/gcore/gpacket"
 	"net/http"
 	_ "net/http/pprof"
 	"testing"

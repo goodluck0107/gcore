@@ -1,7 +1,7 @@
 package grand
 
 import (
-	"gitee.com/monobytes/gcore/glog"
+	"github.com/goodluck0107/gcore/glog"
 	"math"
 	"math/rand"
 	"strconv"

@@ -2,8 +2,8 @@ package gerrors_test
 
 import (
 	"fmt"
-	"gitee.com/monobytes/gcore/gcodes"
-	"gitee.com/monobytes/gcore/gerrors"
+	"github.com/goodluck0107/gcore/gcodes"
+	"github.com/goodluck0107/gcore/gerrors"
 	"testing"
 )
 

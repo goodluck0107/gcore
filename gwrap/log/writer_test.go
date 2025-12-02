@@ -1,8 +1,8 @@
 package log_test
 
 import (
-	"gitee.com/monobytes/gcore/gutils/grand"
-	"gitee.com/monobytes/gcore/gwrap/log"
+	"github.com/goodluck0107/gcore/gutils/grand"
+	"github.com/goodluck0107/gcore/gwrap/log"
 	"testing"
 )
 

@@ -2,11 +2,11 @@ package gconfig
 
 import (
 	"context"
-	"gitee.com/monobytes/gcore/gencoding/json"
-	"gitee.com/monobytes/gcore/gencoding/toml"
-	"gitee.com/monobytes/gcore/gencoding/xml"
-	"gitee.com/monobytes/gcore/gencoding/yaml"
-	"gitee.com/monobytes/gcore/gerrors"
+	"github.com/goodluck0107/gcore/gencoding/json"
+	"github.com/goodluck0107/gcore/gencoding/toml"
+	"github.com/goodluck0107/gcore/gencoding/xml"
+	"github.com/goodluck0107/gcore/gencoding/yaml"
+	"github.com/goodluck0107/gcore/gerrors"
 	"strings"
 )
 

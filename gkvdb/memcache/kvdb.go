@@ -3,11 +3,11 @@ package memcache
 
 import (
 	"context"
-	"gitee.com/monobytes/gcore/gerrors"
-	"gitee.com/monobytes/gcore/gkvdb"
-	"gitee.com/monobytes/gcore/gutils/gconv"
-	"gitee.com/monobytes/gcore/gutils/grand"
 	"github.com/bradfitz/gomemcache/memcache"
+	"github.com/goodluck0107/gcore/gerrors"
+	"github.com/goodluck0107/gcore/gkvdb"
+	"github.com/goodluck0107/gcore/gutils/gconv"
+	"github.com/goodluck0107/gcore/gutils/grand"
 	"golang.org/x/sync/singleflight"
 	"reflect"
 	"time"

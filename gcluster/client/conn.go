@@ -1,10 +1,10 @@
 package client
 
 import (
-	"gitee.com/monobytes/gcore/gcluster"
-	"gitee.com/monobytes/gcore/gnetwork"
-	"gitee.com/monobytes/gcore/gpacket"
-	"gitee.com/monobytes/gcore/gwrap/value"
+	"github.com/goodluck0107/gcore/gcluster"
+	"github.com/goodluck0107/gcore/gnetwork"
+	"github.com/goodluck0107/gcore/gpacket"
+	"github.com/goodluck0107/gcore/gwrap/value"
 	"net"
 	"sync"
 )

@@ -1,8 +1,8 @@
 package rsa
 
 import (
-	"gitee.com/monobytes/gcore/getc"
-	"gitee.com/monobytes/gcore/gwrap/hash"
+	"github.com/goodluck0107/gcore/getc"
+	"github.com/goodluck0107/gcore/gwrap/hash"
 	"strings"
 )
 

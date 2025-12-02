@@ -2,9 +2,9 @@ package server
 
 import (
 	"crypto/tls"
-	"gitee.com/monobytes/gcore/gerrors"
-	"gitee.com/monobytes/gcore/gwrap/endpoint"
-	xnet "gitee.com/monobytes/gcore/gwrap/net"
+	"github.com/goodluck0107/gcore/gerrors"
+	"github.com/goodluck0107/gcore/gwrap/endpoint"
+	xnet "github.com/goodluck0107/gcore/gwrap/net"
 	"github.com/smallnest/rpcx/server"
 )
 

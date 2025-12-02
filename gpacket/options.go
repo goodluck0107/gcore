@@ -2,7 +2,7 @@ package gpacket
 
 import (
 	"encoding/binary"
-	"gitee.com/monobytes/gcore/getc"
+	"github.com/goodluck0107/gcore/getc"
 	"strings"
 )
 

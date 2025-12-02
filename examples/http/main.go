@@ -1,13 +1,13 @@
 package main
 
 import (
-	"gitee.com/monobytes/gcore/examples/http/service"
-	"gitee.com/monobytes/gcore/examples/protocol/pb"
-	"gitee.com/monobytes/gcore/gengine/hextech"
-	"gitee.com/monobytes/gcore/gmodules/ghttp"
-	"gitee.com/monobytes/gcore/gmodules/gpprof"
-	"gitee.com/monobytes/gcore/gprotocol/handler"
-	"gitee.com/monobytes/gcore/gprotocol/interfaces"
+	"github.com/goodluck0107/gcore/examples/http/service"
+	"github.com/goodluck0107/gcore/examples/protocol/pb"
+	"github.com/goodluck0107/gcore/gengine/hextech"
+	"github.com/goodluck0107/gcore/gmodules/ghttp"
+	"github.com/goodluck0107/gcore/gmodules/gpprof"
+	"github.com/goodluck0107/gcore/gprotocol/handler"
+	"github.com/goodluck0107/gcore/gprotocol/interfaces"
 )
 
 func main() {

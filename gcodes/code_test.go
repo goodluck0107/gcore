@@ -2,7 +2,7 @@ package gcodes_test
 
 import (
 	"errors"
-	"gitee.com/monobytes/gcore/gcodes"
+	"github.com/goodluck0107/gcore/gcodes"
 	"testing"
 )
 

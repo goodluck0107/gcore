@@ -1,9 +1,9 @@
 package hook
 
 import (
-	"gitee.com/monobytes/gcore/glog"
-	"gitee.com/monobytes/gcore/glog/logrus/internal/define"
-	"gitee.com/monobytes/gcore/gwrap/stack"
+	"github.com/goodluck0107/gcore/glog"
+	"github.com/goodluck0107/gcore/glog/logrus/internal/define"
+	"github.com/goodluck0107/gcore/gwrap/stack"
 	"github.com/sirupsen/logrus"
 )
 

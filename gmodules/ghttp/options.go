@@ -1,9 +1,9 @@
 package ghttp
 
 import (
-	"gitee.com/monobytes/gcore/getc"
-	"gitee.com/monobytes/gcore/gregistry"
-	"gitee.com/monobytes/gcore/gtransport"
+	"github.com/goodluck0107/gcore/getc"
+	"github.com/goodluck0107/gcore/gregistry"
+	"github.com/goodluck0107/gcore/gtransport"
 )
 
 const (

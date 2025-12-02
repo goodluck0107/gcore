@@ -1,12 +1,12 @@
 package kafka
 
 import (
-	"gitee.com/monobytes/gcore/gencoding/json"
-	"gitee.com/monobytes/gcore/geventbus"
-	"gitee.com/monobytes/gcore/gutils/gconv"
-	"gitee.com/monobytes/gcore/gutils/gtime"
-	"gitee.com/monobytes/gcore/gutils/guuid"
-	"gitee.com/monobytes/gcore/gwrap/value"
+	"github.com/goodluck0107/gcore/gencoding/json"
+	"github.com/goodluck0107/gcore/geventbus"
+	"github.com/goodluck0107/gcore/gutils/gconv"
+	"github.com/goodluck0107/gcore/gutils/gtime"
+	"github.com/goodluck0107/gcore/gutils/guuid"
+	"github.com/goodluck0107/gcore/gwrap/value"
 )
 
 type data struct {

@@ -2,8 +2,8 @@ package consul_test
 
 import (
 	"context"
-	"gitee.com/monobytes/gcore/gconfig"
-	"gitee.com/monobytes/gcore/gconfig/consul"
+	"github.com/goodluck0107/gcore/gconfig"
+	"github.com/goodluck0107/gcore/gconfig/consul"
 	"testing"
 	"time"
 )

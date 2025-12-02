@@ -2,7 +2,7 @@ package nacos
 
 import (
 	"context"
-	"gitee.com/monobytes/gcore/gconfig"
+	"github.com/goodluck0107/gcore/gconfig"
 	"github.com/nacos-group/nacos-sdk-go/v2/vo"
 )
 

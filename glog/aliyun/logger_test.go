@@ -1,7 +1,7 @@
 package aliyun_test
 
 import (
-	"gitee.com/monobytes/gcore/glog/aliyun"
+	"github.com/goodluck0107/gcore/glog/aliyun"
 	"testing"
 )
 

@@ -2,8 +2,8 @@ package consul
 
 import (
 	"fmt"
-	"gitee.com/monobytes/gcore/gregistry"
-	"gitee.com/monobytes/gcore/gutils/gconv"
+	"github.com/goodluck0107/gcore/gregistry"
+	"github.com/goodluck0107/gcore/gutils/gconv"
 	"strings"
 )
 

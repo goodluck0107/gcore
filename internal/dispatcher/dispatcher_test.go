@@ -2,10 +2,10 @@ package dispatcher_test
 
 import (
 	"fmt"
-	"gitee.com/monobytes/gcore/gcluster"
-	"gitee.com/monobytes/gcore/gregistry"
-	"gitee.com/monobytes/gcore/gwrap/endpoint"
-	"gitee.com/monobytes/gcore/internal/dispatcher"
+	"github.com/goodluck0107/gcore/gcluster"
+	"github.com/goodluck0107/gcore/gregistry"
+	"github.com/goodluck0107/gcore/gwrap/endpoint"
+	"github.com/goodluck0107/gcore/internal/dispatcher"
 	"math"
 	"testing"
 )

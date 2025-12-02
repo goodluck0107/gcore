@@ -2,15 +2,15 @@ package ghttp
 
 import (
 	"fmt"
-	"gitee.com/monobytes/gcore/glog"
-	"gitee.com/monobytes/gcore/gmodules"
-	"gitee.com/monobytes/gcore/gmodules/ghttp/swagger"
-	"gitee.com/monobytes/gcore/gwrap/info"
-	xnet "gitee.com/monobytes/gcore/gwrap/net"
 	"github.com/gofiber/fiber/v3"
 	"github.com/gofiber/fiber/v3/middleware/cors"
 	"github.com/gofiber/fiber/v3/middleware/logger"
 	"github.com/gofiber/fiber/v3/middleware/recover"
+	"github.com/goodluck0107/gcore/glog"
+	"github.com/goodluck0107/gcore/gmodules"
+	"github.com/goodluck0107/gcore/gmodules/ghttp/swagger"
+	"github.com/goodluck0107/gcore/gwrap/info"
+	xnet "github.com/goodluck0107/gcore/gwrap/net"
 	"strings"
 )
 

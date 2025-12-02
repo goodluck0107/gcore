@@ -1,7 +1,7 @@
 package gnet_test
 
 import (
-	"gitee.com/monobytes/gcore/gutils/gnet"
+	"github.com/goodluck0107/gcore/gutils/gnet"
 	"testing"
 )
 

@@ -2,8 +2,8 @@ package client
 
 import (
 	"context"
-	"gitee.com/monobytes/gcore/gerrors"
-	"gitee.com/monobytes/gcore/gwrap/buffer"
+	"github.com/goodluck0107/gcore/gerrors"
+	"github.com/goodluck0107/gcore/gwrap/buffer"
 	"sync"
 	"sync/atomic"
 	"time"

@@ -2,8 +2,8 @@ package etcd_test
 
 import (
 	"context"
-	"gitee.com/monobytes/gcore/gconfig"
-	"gitee.com/monobytes/gcore/gconfig/etcd"
+	"github.com/goodluck0107/gcore/gconfig"
+	"github.com/goodluck0107/gcore/gconfig/etcd"
 	"testing"
 	"time"
 )

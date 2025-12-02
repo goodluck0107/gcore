@@ -4,7 +4,7 @@ import (
 	"flag"
 	"testing"
 
-	"gitee.com/monobytes/gcore/gmode"
+	"github.com/goodluck0107/gcore/gmode"
 )
 
 func TestGetMode(t *testing.T) {

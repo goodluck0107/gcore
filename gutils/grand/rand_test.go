@@ -2,8 +2,8 @@ package grand_test
 
 import (
 	"fmt"
-	"gitee.com/monobytes/gcore/gutils/gconv"
-	"gitee.com/monobytes/gcore/gutils/grand"
+	"github.com/goodluck0107/gcore/gutils/gconv"
+	"github.com/goodluck0107/gcore/gutils/grand"
 	"testing"
 )
 

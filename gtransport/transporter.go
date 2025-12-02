@@ -2,8 +2,8 @@ package gtransport
 
 import (
 	"context"
-	"gitee.com/monobytes/gcore/gregistry"
-	"gitee.com/monobytes/gcore/gwrap/endpoint"
+	"github.com/goodluck0107/gcore/gregistry"
+	"github.com/goodluck0107/gcore/gwrap/endpoint"
 )
 
 type Server interface {

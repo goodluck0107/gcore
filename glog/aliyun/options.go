@@ -1,8 +1,8 @@
 package aliyun
 
 import (
-	"gitee.com/monobytes/gcore/getc"
-	"gitee.com/monobytes/gcore/glog"
+	"github.com/goodluck0107/gcore/getc"
+	"github.com/goodluck0107/gcore/glog"
 )
 
 const (

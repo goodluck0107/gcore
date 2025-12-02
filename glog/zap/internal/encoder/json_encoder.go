@@ -2,8 +2,8 @@ package encoder
 
 import (
 	"fmt"
-	"gitee.com/monobytes/gcore/glog/zap/internal/utils"
-	"gitee.com/monobytes/gcore/gutils/gconv"
+	"github.com/goodluck0107/gcore/glog/zap/internal/utils"
+	"github.com/goodluck0107/gcore/gutils/gconv"
 	"go.uber.org/zap/buffer"
 	"go.uber.org/zap/zapcore"
 	"path/filepath"

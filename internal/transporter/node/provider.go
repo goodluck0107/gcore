@@ -2,7 +2,7 @@ package node
 
 import (
 	"context"
-	"gitee.com/monobytes/gcore/gcluster"
+	"github.com/goodluck0107/gcore/gcluster"
 )
 
 type Provider interface {

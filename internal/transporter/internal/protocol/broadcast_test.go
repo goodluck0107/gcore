@@ -1,11 +1,11 @@
 package protocol_test
 
 import (
-	"gitee.com/monobytes/gcore/gpacket"
-	"gitee.com/monobytes/gcore/gsession"
-	"gitee.com/monobytes/gcore/gwrap/buffer"
-	"gitee.com/monobytes/gcore/internal/transporter/internal/codes"
-	"gitee.com/monobytes/gcore/internal/transporter/internal/protocol"
+	"github.com/goodluck0107/gcore/gpacket"
+	"github.com/goodluck0107/gcore/gsession"
+	"github.com/goodluck0107/gcore/gwrap/buffer"
+	"github.com/goodluck0107/gcore/internal/transporter/internal/codes"
+	"github.com/goodluck0107/gcore/internal/transporter/internal/protocol"
 	"testing"
 )
 

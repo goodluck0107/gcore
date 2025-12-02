@@ -1,7 +1,7 @@
 package nats
 
 import (
-	"gitee.com/monobytes/gcore/getc"
+	"github.com/goodluck0107/gcore/getc"
 	"github.com/nats-io/nats.go"
 	"time"
 )

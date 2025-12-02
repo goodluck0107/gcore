@@ -1,7 +1,7 @@
 package gfile_test
 
 import (
-	"gitee.com/monobytes/gcore/gutils/gfile"
+	"github.com/goodluck0107/gcore/gutils/gfile"
 	"testing"
 )
 

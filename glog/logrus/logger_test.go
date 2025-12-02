@@ -1,8 +1,8 @@
 package logrus_test
 
 import (
-	"gitee.com/monobytes/gcore/glog"
-	"gitee.com/monobytes/gcore/glog/logrus"
+	"github.com/goodluck0107/gcore/glog"
+	"github.com/goodluck0107/gcore/glog/logrus"
 	"testing"
 )
 
