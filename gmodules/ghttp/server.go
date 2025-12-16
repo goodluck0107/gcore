@@ -145,3 +145,39 @@ func (s *Server) printInfo(addr string) {
 
 	info.PrintBoxInfo("Http", infos...)
 }
+
+func ClientIP(c Context) string {
+	if originalIP := c.Get("X-Original-Forwarded-For"); originalIP != "" {
+		return originalIP
+	}
+
+	// 尝试从自定义头获取（如某些 CDN 会用 X-Original-IP）
+	realIP := c.Get("X-Original-IP")
+	if realIP != "" {
+		return realIP
+	}
+
+	// 解析 X-Forwarded-For（取第一个 IP）
+	xff := c.Get("X-Forwarded-For")
+	if xff != "" {
+		// X-Forwarded-For 格式："clientIP, proxy1IP, proxy2IP"
+		parts := strings.Split(xff, ",")
+		if len(parts) > 0 {
+			return strings.TrimSpace(parts[0])
+		}
+	}
+
+	// 解析 X-Real-IP
+	realIP = c.Get("X-Real-IP")
+	if realIP != "" {
+		return realIP
+	}
+
+	// 最后 fallback 到远程地址
+	remoteAddr := c.IP()
+	// 去除端口（如 "192.168.1.1:5678" -> "192.168.1.1"）
+	if idx := strings.LastIndex(remoteAddr, ":"); idx != -1 {
+		remoteAddr = remoteAddr[:idx]
+	}
+	return remoteAddr
+}

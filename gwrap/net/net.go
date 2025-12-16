@@ -114,7 +114,7 @@ func InternalIP() (string, error) {
 	if ip != "" {
 		return ip, nil
 	} else {
-		glog.Errorf("not found ip address")
+		glog.Warnf("not found ip address")
 		return "", gerrors.New("not found ip address")
 	}
 }
