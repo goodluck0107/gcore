@@ -1,25 +1,11 @@
 package interfaces
 
-import "google.golang.org/protobuf/proto"
+import "github.com/goodluck0107/gmsgdef"
 
 type (
-	MethodItem struct {
-		Method string
-		HTTP   string
-		Auth   int32
-		Cmd    int32
-	}
+	MethodItem = gmsgdef.MethodItem
 
-	ReqItem struct {
-		Req  func() proto.Message
-		Rsp  func() proto.Message
-		Auth int32
-		Name string
-		HTTP string
-	}
+	ReqItem = gmsgdef.ReqItem
+
+	MsgDef = gmsgdef.MsgDef
 )
-
-type MsgDef interface {
-	GetMethodRouter() map[string]*MethodItem
-	GetIdMsg() map[int32]*ReqItem
-}
