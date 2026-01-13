@@ -292,14 +292,25 @@ func (ts *GenData) RenderGOCode(name string) *plugin.CodeGeneratorResponse_File 
 package pb
 
 import (
-	"github.com/goodluck0107/gcore/gprotocol/interfaces"
+	wrappers "github.com/golang/protobuf/ptypes/wrappers"
+	"github.com/goodluck0107/gmsgdef"
 	"google.golang.org/protobuf/proto"
 )
+
+type StringValue = wrappers.StringValue
+type BoolValue = wrappers.BoolValue
+type BytesValue = wrappers.BytesValue
+type FloatValue = wrappers.FloatValue
+type DoubleValue = wrappers.DoubleValue
+type Int32Value = wrappers.Int32Value
+type Int64Value = wrappers.Int64Value
+type UInt32Value = wrappers.UInt32Value
+type UInt64Value = wrappers.UInt64Value
 
 {{- $cmdTypeName := .CmdTypeName}}
 
 var (
-	MethodRouter = map[string]*interfaces.MethodItem{
+	MethodRouter = map[string]*gmsgdef.MethodItem{
 {{- range .Services}}
 {{- $serviceName :=  .Name}}
 {{- $serviceAuth := getServiceAuth .}}
@@ -315,7 +326,7 @@ var (
 {{- end}}
 	}
 
-	IdMsg = map[int32]*interfaces.ReqItem{
+	IdMsg = map[int32]*gmsgdef.ReqItem{
 		{{- range .ProtoList}}
 		{{- $protoItem := getProtoItem .}}
 		int32({{$cmdTypeName}}_{{$protoItem.IdName}}): {Req: func() proto.Message { return &{{baseName $protoItem.ReqType}}{} }, Rsp: func() proto.Message { return &{{baseName $protoItem.RspType}}{} }, Auth: {{$protoItem.MthAuth}}, Name: "{{$protoItem.Name}}", HTTP: "{{$protoItem.Method}}"},
@@ -324,10 +335,10 @@ var (
 )
 type MsgDefStruct struct{}
 
-func (m *MsgDefStruct) GetMethodRouter() map[string]*interfaces.MethodItem {
+func (m *MsgDefStruct) GetMethodRouter() map[string]*gmsgdef.MethodItem {
 	return MethodRouter
 }
-func (m *MsgDefStruct) GetIdMsg() map[int32]*interfaces.ReqItem {
+func (m *MsgDefStruct) GetIdMsg() map[int32]*gmsgdef.ReqItem {
 	return IdMsg
 }
 

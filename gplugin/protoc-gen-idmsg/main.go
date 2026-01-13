@@ -32,6 +32,7 @@ var (
 	includePackageInTags       = flag.Bool("include_package_in_tags", false, "if unset, the gRPC service name is added to the `Tags` field of each operation. if set and the `package` directive is shown in the proto file, the package name will be prepended to the service name")
 	useFQNForSwaggerName       = flag.Bool("fqn_for_swagger_name", false, "if set, the object's swagger names will use the fully qualify name from the proto definition (ie my.package.MyMessage.MyInnerMessage")
 	v1                         = flag.Bool("v1", false, "if set, output file use old version")
+	skipRpc                    = flag.Bool("skip_rpc", false, "if set, skip rpc generation")
 )
 
 // Variables set by goreleaser at build time
@@ -114,7 +115,9 @@ func main() {
 		emitFile(genData.RenderGOCodeV1("msg.go"))
 	} else {
 		emitFile(genData.RenderGOCode("msg.go"))
-		emitFiles(rpcData.GenRpcV2())
+		if !*skipRpc {
+			emitFiles(rpcData.GenRpcV2())
+		}
 	}
 }
 

@@ -10,7 +10,6 @@ import (
 // ParseAddr 解析地址
 func ParseAddr(addr string) (listenAddr, exposeAddr string, err error) {
 	var host, port string
-
 	if addr != "" {
 		host, port, err = net.SplitHostPort(addr)
 		if err != nil {
