@@ -112,7 +112,7 @@ func main() {
 	emitFile(genData.RenderTSCode("msg.ts"))
 
 	if *v1 {
-		emitFile(genData.RenderGOCodeV1("msg.go"))
+		// emitFile(genData.RenderGOCodeV1("msg.go"))
 	} else {
 		emitFile(genData.RenderGOCode("msg.go"))
 		if !*skipRpc {
