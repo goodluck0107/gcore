@@ -166,6 +166,7 @@ func (ts *GenData) FromReg(reg *Registry) {
 				default:
 					continue
 				}
+				// fmt.Println(fmt.Sprintf("p: %#v", p))
 				ts.AddProtocol(p)
 			}
 		}
@@ -329,7 +330,7 @@ var (
 	IdMsg = map[int32]*gmsgdef.ReqItem{
 		{{- range .ProtoList}}
 		{{- $protoItem := getProtoItem .}}
-		int32({{$cmdTypeName}}_{{$protoItem.IdName}}): {Req: func() proto.Message { return &{{baseName $protoItem.ReqType}}{} }, Rsp: func() proto.Message { return &{{baseName $protoItem.RspType}}{} }, Auth: {{$protoItem.MthAuth}}, Name: "{{$protoItem.Name}}", HTTP: "{{$protoItem.Method}}"},
+		int32({{$cmdTypeName}}_{{$protoItem.IdName}}): {Req: func() proto.Message { return &{{baseName $protoItem.ReqType}}{} }, Rsp: func() proto.Message { return &{{baseName $protoItem.RspType}}{} }, Auth: {{$protoItem.MthAuth}}, Name: "{{$protoItem.Name}}", HTTP: "{{$protoItem.Method}}", RPCMethod: "/{{$protoItem.SvcName}}/{{$protoItem.MthName}}"},
 		{{- end}}
     }
 )
