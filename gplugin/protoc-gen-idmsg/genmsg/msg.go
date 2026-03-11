@@ -321,8 +321,8 @@ func (ts *GenData) FromReg(reg *Registry) {
 				}
 				methAuth, _ := extractAuthMethodOptions(meth)
 				auth := int32(0)
-				if methAuth != nil {
-					auth = int32(*methAuth)
+				if methAuth != 0 {
+					auth = int32(methAuth)
 				}
 				if auth == 0 && serviceAuth != 0 {
 					auth = int32(serviceAuth)

@@ -90,7 +90,7 @@ func getMethodCmd(meth *descriptor.MethodDescriptorProto) int32 {
 	return int32(mOption.Cmd)
 }
 
-func getMethAuthType(meth *descriptor.MethodDescriptorProto) *pb.AuthType {
+func getMethAuthType(meth *descriptor.MethodDescriptorProto) pb.AuthType {
 	mOption, _ := extractAuthMethodOptions(meth)
 	return mOption
 }
@@ -107,8 +107,8 @@ func getServiceAuth(service *descriptor.ServiceDescriptorProto) int32 {
 func getMethodAuth(serviceAuth int32, meth *descriptor.MethodDescriptorProto) int32 {
 	opts, err := extractAuthMethodOptions(meth)
 	var mthAuth int32
-	if err == nil && opts != nil {
-		mthAuth = int32(*opts)
+	if err == nil && opts != 0 {
+		mthAuth = int32(opts)
 	} else {
 		mthAuth = serviceAuth
 	}
@@ -134,17 +134,17 @@ func extractAuthServiceOptions(service *descriptor.ServiceDescriptorProto) (pb.A
 	return opts, nil
 }
 
-func extractAuthMethodOptions(meth *descriptor.MethodDescriptorProto) (*pb.AuthType, error) {
+func extractAuthMethodOptions(meth *descriptor.MethodDescriptorProto) (pb.AuthType, error) {
 	if meth.Options == nil {
-		return nil, nil
+		return 0, nil
 	}
 	if !proto.HasExtension(meth.Options, pb.E_AuthMethod) {
-		return nil, nil
+		return 0, nil
 	}
 	ext := proto.GetExtension(meth.Options, pb.E_AuthMethod)
-	opts, ok := ext.(*pb.AuthType)
+	opts, ok := ext.(pb.AuthType)
 	if !ok {
-		return nil, fmt.Errorf("extension is %T; want an HttpRule", ext)
+		return 0, fmt.Errorf("extension is %T; want an HttpRule", ext)
 	}
 	return opts, nil
 }
