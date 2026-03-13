@@ -484,7 +484,7 @@ var (
 	IdMsg = map[int32]*gmsgdef.ReqItem{
 		{{- range .ProtoList}}
 		{{- $protoItem := getProtoItem .}}
-		int32({{$cmdTypeName}}_{{$protoItem.IdName}}): {Req: func() proto.Message { return &{{$protoItem.ReqType}}{} }, Rsp: func() proto.Message { return &{{$protoItem.RspType}}{} }, Auth: {{$protoItem.MthAuth}}, Name: "{{$protoItem.Name}}", HTTP: "{{$protoItem.Method}}", RPCMethod: "/{{$protoItem.SvcName}}/{{$protoItem.MthName}}"},
+		int32({{$cmdTypeName}}_{{$protoItem.IdName}}): {Req: func() proto.Message { return &{{$protoItem.ReqType}}{} }, Rsp: func() proto.Message { return &{{$protoItem.RspType}}{} }, Auth: {{$protoItem.MthAuth}}, Name: "{{$protoItem.Name}}", HTTP: "{{$protoItem.Method}}", RPCMethod: {{$protoItem.SvcName}}_{{$protoItem.MthName}}_FullMethodName },
 		{{- end}}
     }
 )
