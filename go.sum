@@ -257,8 +257,8 @@ github.com/golang/protobuf v1.5.4/go.mod h1:lnTiLA8Wa4RWRcIUkrtSVa5nRhsEGBg48fD6
 github.com/golang/snappy v0.0.0-20180518054509-2e65f85255db/go.mod h1:/XxbfmMg8lxefKM7IXC3fBNl/7bRcc72aCRzEWrmP2Q=
 github.com/golang/snappy v0.0.5-0.20220116011046-fa5810519dcb h1:PBC98N2aIaM3XXiurYmW7fx4GZkL8feAMVq7nEjURHk=
 github.com/golang/snappy v0.0.5-0.20220116011046-fa5810519dcb/go.mod h1:/XxbfmMg8lxefKM7IXC3fBNl/7bRcc72aCRzEWrmP2Q=
-github.com/goodluck0107/gmsgdef v0.0.2 h1:MLo6yBvM8lDcnV9AjnKbS5Wtj9vQq3H2Iw9StNYq5ss=
-github.com/goodluck0107/gmsgdef v0.0.2/go.mod h1:hY6xnnxICH1OA/NPWRgZsZZRbtbnfPMPiYu/aye9vTc=
+github.com/goodluck0107/gmsgdef v0.0.3 h1:ug6AdUREOpGH+v0ADz1weWTXEANWtU+p0g7xe9+AiCw=
+github.com/goodluck0107/gmsgdef v0.0.3/go.mod h1:hY6xnnxICH1OA/NPWRgZsZZRbtbnfPMPiYu/aye9vTc=
 github.com/google/btree v0.0.0-20180813153112-4030bb1f1f0c/go.mod h1:lNA+9X1NB3Zf8V7Ke586lFgjr2dZNuvo3lPJSGZ5JPQ=
 github.com/google/btree v1.0.0/go.mod h1:lNA+9X1NB3Zf8V7Ke586lFgjr2dZNuvo3lPJSGZ5JPQ=
 github.com/google/btree v1.0.1 h1:gK4Kx5IaGY9CD5sPJ36FHiBJ6ZXl0kilRiiCj+jdYp4=
