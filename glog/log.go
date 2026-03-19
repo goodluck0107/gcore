@@ -1,5 +1,7 @@
 package glog
 
+import "io"
+
 var globalLogger Logger
 
 func init() {
@@ -18,20 +20,6 @@ func SetLogger(logger Logger) {
 // GetLogger 获取日志记录器
 func GetLogger() Logger {
 	return globalLogger
-}
-
-// Print 打印日志，不含堆栈信息
-func Print(level Level, a ...interface{}) {
-	if globalLogger != nil {
-		globalLogger.Print(level, a...)
-	}
-}
-
-// Printf 打印模板日志，不含堆栈信息
-func Printf(level Level, format string, a ...interface{}) {
-	if globalLogger != nil {
-		globalLogger.Printf(level, format, a...)
-	}
 }
 
 // Debug 打印调试日志
@@ -121,6 +109,9 @@ func Panicf(format string, a ...interface{}) {
 // Close 关闭日志
 func Close() {
 	if globalLogger != nil {
-		_ = globalLogger.Close()
+		closer, ok := globalLogger.(io.Closer)
+		if ok {
+			_ = closer.Close()
+		}
 	}
 }

@@ -10,9 +10,9 @@ import (
 
 type Logger interface {
 	// Print 打印日志，不含堆栈信息
-	Print(level Level, a ...interface{})
-	// Printf 打印模板日志，不含堆栈信息
-	Printf(level Level, format string, a ...interface{})
+	//Print(level Level, a ...interface{})
+	//// Printf 打印模板日志，不含堆栈信息
+	//Printf(level Level, format string, a ...interface{})
 	// Debug 打印调试日志
 	Debug(a ...interface{})
 	// Debugf 打印调试模板日志
@@ -38,7 +38,7 @@ type Logger interface {
 	// Panicf 打印Panic模板日志
 	Panicf(format string, a ...interface{})
 	// Close 关闭日志
-	Close() error
+	// Close() error
 }
 
 type defaultLogger struct {
